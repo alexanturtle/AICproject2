@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS `shop` (
 INSERT INTO `shop` 
 	(`location`, `item_type`) 
 VALUES
+(hiihiihiii
