@@ -31,17 +31,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `shop_id` int,
   `user_name` text,
-<<<<<<< HEAD
   `password` text
-=======
-`password` text,
->>>>>>> 660e01a3e973e4d1292f349bd63aeaf5ca98cb25
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
 	(`shop_id`, `user_name`, `password`);
 VALUES
-     ();
+     (1, `zoya`, `password`),
+      (2, `richard`, `password`),
+     (3, `riti`, `password`);
+
 
 CREATE TABLE IF NOT EXISTS `customer` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -52,7 +51,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
 INSERT INTO `customer` 
 	(`user_name`, `password`);
 VALUES
-     ();
+     (`blablab`, `password`),
+      (`yayay`, `password`),
+     (`coolcool`, `password`);
 
 CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -64,7 +65,11 @@ CREATE TABLE IF NOT EXISTS `purchased` (
 INSERT INTO `purchased` 
 	(`customer_id`,`item_id`,`bought`);
 VALUES
-     ();
+  (1,1,`yes`);
+  (2,2,`no`);
+  (3,3,`yes`);
+
+
     
 
 
