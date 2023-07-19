@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
    `shop_id` int,
   `user_name` text,
-    `password` text,
+`password` text,
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
