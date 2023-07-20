@@ -5,7 +5,7 @@
 <!DOCTYPE html>
   <html lang="en">
   <head>
-      <title>Login page</title>
+      <title>Customer Login</title>
   </head>
   <body>
       <h1>Customer Login</h1>
@@ -16,16 +16,17 @@
           </div>
   
 =          <div>
-              <label for="username">Your username</label>
+              <label for="username">Username: </label>
               <input type="text" placeholder="Enter Username" name="username" required>
   
               <br><br>
-                <label for="pswrd">Your password</label>
+                <label for="pswrd">Password: </label>
               <input type="password" placeholder="Enter Password" name="pswrd" required>
+
+              <br><br>
               <a href="homepage.html">Back</a>
               <a href= "customerstore.html">Login</a>
-          </div>
-  
+            </div>
       </form>
   </body>
   </html>

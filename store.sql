@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `price` int
   PRIMARY KEY (`id`)
 );
-INSERT INTO `item` 
+INSERT INTO `items` 
 	(`shop_id`, `item_type`, `price`);
 VALUES
      (1, `clothes`, 25),
