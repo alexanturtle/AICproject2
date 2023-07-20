@@ -1,11 +1,11 @@
-  <?php
-      require_once "config.php";
-      session_start();
-  ?>
-  <!DOCTYPE html>
+<?php
+    require_once "config.php";
+    session_start();
+?>
+<!DOCTYPE html>
   <html lang="en">
   <head>
-      <title>Login page</title>
+      <title>Admin Login</title>
   </head>
   <body>
       <h1>Admin Login</h1>
