@@ -18,11 +18,6 @@
             $hash = $hash["password"];
         }
         if (isset($_SESSION['admin'])) {
-          // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-          // $sth0 = $dbh->prepare("SELECT * FROM player WHERE id = :playerid");
-          // $sth0->bindValue(':playerid', $_SESSION['player']);
-          // $sth0->execute();
-          // $playername = $sth0->fetch();
     ?>
     <form action="">
           <div>
