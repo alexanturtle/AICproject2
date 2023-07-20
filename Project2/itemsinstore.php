@@ -11,7 +11,7 @@ require_once "config.php";
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
-    $items = $getitem->fetch();
+    $items = $getitem->fetchAll();
     echo"<p>Items</p><br>";
     foreach($items as $item){
         echo"<div class='item'>";
