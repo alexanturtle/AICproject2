@@ -13,7 +13,6 @@
           <div >
               <h3>Sign in</h3>
           </div>
-       // hi
           <div>
               <label for="username">Username: </label>
               <input type="text" placeholder="Enter Username" name="username" required>
