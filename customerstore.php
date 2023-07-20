@@ -10,6 +10,8 @@
             <br><br>
             <a href="homepage.html">Logout</a>
             <br><br>
+            <a href="itemsinstore.php">Logout</a>
+            <br><br>
             <p>Many types of shops</p>
           </div>
     </form>
