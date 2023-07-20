@@ -4,13 +4,13 @@
     <title>Customer Page</title>
 </head>
 <body>
-    <h1>Store Customer-</h1>
+    <h1>Store Customer</h1>
     <form action="">
           <div>
             <br><br>
-            <a href="homepage.html">Logout</a>
+            <a href="itemsinstore.php">Items</a>
             <br><br>
-            <a href="itemsinstore.php">Logout</a>
+            <a href="homepage.html">Logout</a>
             <br><br>
             <p>Many types of shops</p>
           </div>
