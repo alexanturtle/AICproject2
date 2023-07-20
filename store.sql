@@ -69,6 +69,20 @@ VALUES
   (2,2,`no`);
   (3,3,`yes`);
 
+  CREATE TABLE IF NOT EXISTS `items` (
+     `id` int NOT NULL AUTO_INCREMENT,
+    `category` text,  
+  `item_name` text,
+  `item_image` text
+  PRIMARY KEY (`id`)
+);
+INSERT INTO `items` 
+	(`category`,`item_name`, `item_image`);
+VALUES
+     (`clothes`, `Pink sweatshirt`, ``),
+    (``, ``),
+     (``, ``);
+
 
     
 
