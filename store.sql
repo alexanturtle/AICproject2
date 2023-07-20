@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `price` int
   PRIMARY KEY (`id`)
 );
-INSERT INTO `item` 
+INSERT INTO `items` 
 	(`shop_id`, `item_type`, `price`);
 VALUES
      (1, `clothes`, 25),
@@ -68,6 +68,20 @@ VALUES
   (1,1,`yes`);
   (2,2,`no`);
   (3,3,`yes`);
+
+  CREATE TABLE IF NOT EXISTS `items` (
+     `id` int NOT NULL AUTO_INCREMENT,
+    `category` text,  
+  `item_name` text,
+  `item_image` text
+  PRIMARY KEY (`id`)
+);
+INSERT INTO `items` 
+	(`category`,`item_name`, `item_image`);
+VALUES
+     (`clothes`, `Pink sweatshirt`, ``),
+    (``, ``),
+     (``, ``);
 
 
     

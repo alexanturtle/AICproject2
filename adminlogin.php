@@ -1,11 +1,15 @@
-  <!DOCTYPE html>
+<?php
+    require_once "config.php";
+    session_start();
+?>
+<!DOCTYPE html>
   <html lang="en">
   <head>
-      <title>Login page</title>
+      <title>Admin Login</title>
   </head>
   <body>
       <h1>Admin Login</h1>
-      <form action="">
+      <form action="adminstore.php">
           <div >
               <h3>Sign in</h3>
               <p>Sign in with your username and password</p>
