@@ -70,7 +70,7 @@ VALUES
   (3,3,`yes`);
 
   CREATE TABLE IF NOT EXISTS `items` (
-     `id` int NOT NULL AUTO_INCREMENT,
+    `id` int NOT NULL AUTO_INCREMENT,
     `category` text,  
   `item_name` text,
   `item_image` text
@@ -79,9 +79,9 @@ VALUES
 INSERT INTO `items` 
 	(`category`,`item_name`, `item_image`);
 VALUES
-     (`clothes`, `Pink sweatshirt`, ``),
-    (``, ``),
-     (``, ``);
+     (`clothes`, `Pink sweatshirt`, `pinksweat.jpg`),
+    (`clothes`, ``),
+     (`clothes`, ``);
 
 
     
