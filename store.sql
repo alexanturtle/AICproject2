@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `price` int,
   `category` text,  
   `item_name` text,
-  `item_image` text,  
+  `item_image` text,
   PRIMARY KEY (`id`)
 );
 INSERT INTO `items` 
