@@ -9,7 +9,7 @@
   </head>
   <body>
       <h1>Customer Login</h1>
-      <form action="customerstore.php">
+      <form action="customerstore.php" method="post">
           <div >
               <h3>Sign in</h3>
           </div>

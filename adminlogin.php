@@ -9,7 +9,7 @@
   </head>
   <body>
       <h1>Admin Login</h1>
-      <form action="adminstore.php">
+      <form action="adminstore.php" method="post">
           <div >
               <h3>Sign in</h3>
           </div>

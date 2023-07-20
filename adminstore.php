@@ -7,15 +7,15 @@
     <h1>Store Admin</h1>
     <?php
       try {
-        password_hash("meme", PASSWORD_DEFAULT);
+        password_hash("password", PASSWORD_DEFAULT);
 
         if (isset($_POST['password'])) {
-            // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            // $sth1 = $dbh->prepare("SELECT password_hash FROM player WHERE :currentplayer = id");
-            // $sth1->bindValue(':currentplayer', $_POST['player']);
-            // $sth1->execute();
-            // $hash = $sth1->fetch();
-            // $hash = $hash["password_hash"];
+            $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+            $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
+            $sth1->bindValue(':username', $_POST['username']);
+            $sth1->execute();
+            $hash = $sth1->fetch();
+            $hash = $hash["password"];
         }
         if (isset($_SESSION['admin'])) {
           // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
