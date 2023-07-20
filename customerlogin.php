@@ -1,3 +1,7 @@
+<?php
+    require_once "config.php";
+    session_start();
+?>
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -5,7 +9,7 @@
   </head>
   <body>
       <h1>Customer Login</h1>
-      <form action="">
+      <form action="customerstore.php">
           <div >
               <h3>Sign in</h3>
               <p>Sign in with your username and password</p>
