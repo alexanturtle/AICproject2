@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin Page</title>
+    <title>Store (Admin)</title>
 </head>
 <body>
-    <h1>Store Admin</h1>
+    <h1>Store (Admin)</h1>
     <?php
       try {
         password_hash("password", PASSWORD_DEFAULT);
