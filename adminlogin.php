@@ -21,7 +21,7 @@
   
               <br><br>
                 <label for="pswrd">Your password</label>
-              <input type="password" placeholder="Enter Password" name="pswrd" required>
+                <input type="password" id="password" placeholder="Enter Password" name="pswrd" required>
 
               <br><br>
               <a href="homepage.html">Back</a>
