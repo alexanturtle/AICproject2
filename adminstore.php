@@ -6,7 +6,7 @@
 <body>
     <h1>Store -Admin-</h1>
     <form action="">
-=          <div>
+          <div>
             <br><br>
             <a href="homepage.html">Logout</a>
             <br><br>

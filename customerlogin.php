@@ -12,10 +12,9 @@
       <form action="customerstore.php">
           <div >
               <h3>Sign in</h3>
-              <p>Sign in with your username and password</p>
           </div>
   
-=          <div>
+          <div>
               <label for="username">Username: </label>
               <input type="text" placeholder="Enter Username" name="username" required>
   
