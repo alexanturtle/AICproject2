@@ -1,33 +1,25 @@
-<?php
-    require_once "config.php";
-    session_start();
-?>
 <!DOCTYPE html>
   <html lang="en">
   <head>
       <title>Admin Login</title>
+      <link rel="stylesheet" href="login.css">
   </head>
   <body>
+    <div class="inputbox">
       <h1>Admin Login</h1>
       <form action="adminstore.php" method="post">
-          <div >
-              <h3>Sign in</h3>
-          </div>
-  
-          <div>
-              <label for="username">Your username</label>
+              <label for="username">Username: </label> <br>
               <input type="text" placeholder="Enter Username" name="username" required>
   
               <br><br>
-                <label for="pswrd">Your password</label>
+                <label for="pswrd">Password: </label> <br>
                 <input type="password" id="password" placeholder="Enter Password" name="pswrd" required>
 
               <br><br>
-              <a href="homepage.html">Back</a>
-              <a href="adminstore.html">Login</a>
-            </div>
-  
+              <a href="homepage.php">Back</a>
+              <input type="submit" value="Log In">
       </form>
+    </div>
   </body>
   </html>
   

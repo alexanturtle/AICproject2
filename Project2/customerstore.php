@@ -41,7 +41,7 @@
               header("Location: adminstore.php");
           }
           else {
-              header("Location: login.php");
+              header("Location: customerlogin.php");
           }
         }
       }

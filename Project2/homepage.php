@@ -5,9 +5,9 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>ATDP Store</h1>
-        <a href="customerlogin.html">Customer Login</a>
-        <a href="newcustomer.html">New? Sign up here!</a>
-        <a href="adminlogin.html">Admin Login</a>
+        <h1>Not ATDP Store</h1>
+        <a href="customerlogin.php">Customer Login</a>
+        <a href="newcustomer.php">New? Sign up here!</a>
+        <a href="adminlogin.php">Admin Login</a>
     </body>
 </html>
