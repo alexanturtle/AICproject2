@@ -4,7 +4,7 @@ require_once "config.php";
 ?>
 <html>
 <head>
-    <title>Parkamon Game</title>
+    <title>Cart</title>
 </head>
 <body>
 <?php
