@@ -17,7 +17,7 @@
 
               <br><br>
               <a href="homepage.php">Back</a>
-              <input type="submit" value="Create">
+              <a href="shopmenu.php">Create</a>
             
       </form>
     </div>
