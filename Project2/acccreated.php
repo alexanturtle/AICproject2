@@ -17,7 +17,7 @@ session_start();
             if (isset($_SESSION['username'])) {
             $currentCustomerId = $_SESSION['username'];
             $sth1 = $dbh->prepare("SELECT * FROM customer WHERE id=:customerID"); 
-            $sth1->bindValue(":playerID", $currentCustomerId);
+            $sth1->bindValue(":customerID", $currentCustomerId);
             $sth1->execute();
             $customername= $sth1->fetch();
             echo "<h1>Welcome, Customer ID:". htmlspecialchars($currentCustomerId) ." ". htmlspecialchars($currentCustomerId['user_name'])."</h1><br>";
