@@ -1,17 +1,22 @@
 /* homepage css */
 body {
     text-align: center;
+    background-color: #F6E6E4;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1 {
+    color: #5B6D5B;
 }
 #links {
     width: 20%;
     margin: auto;
 }
-a:visited {
-    color: black;
+a {
+    color: white;
 }
 .login {
     text-decoration: none;
-    background-color: #efefef;
+    background-color: #b1b496;
     padding: 15px;
     border-radius: 15px;
     font-size: 17px;
@@ -22,6 +27,9 @@ a:visited {
 }
 #createacc {
     margin-top: 0px;
+}
+#createacc a {
+    color: #926E6F;
 }
 #adminlogin {
     margin-top: 70px;

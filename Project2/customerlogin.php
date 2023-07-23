@@ -9,7 +9,7 @@
       <h1>Customer Login</h1>
       <form action="customerstore.php" method="post">
               <label for="username">Username: </label> <br>
-              <input type="text" placeholder="Enter Username" name="username" required>
+              <input type="text" id="username" placeholder="Enter Username" name="username" required>
   
               <br><br>
                 <label for="pswrd">Password: </label> <br>

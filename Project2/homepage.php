@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="homepage.css">
     </head>
     <body>
-        <h1>Not ATDP Store</h1>
+        <h1>Boba Store</h1>
         <div id="links">
             <div id="customerlogin">
                 <a class="login" href="customerlogin.php">Customer Login</a>
