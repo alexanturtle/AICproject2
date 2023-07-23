@@ -9,7 +9,7 @@ session_start();
     <?php
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        $sth = $dbh->prepare("INSERT INTO customers (`user_name`, `password`) VALUES (`:name`, `:password`)"); 
+        $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`) VALUES (`:name`, `:password`)"); 
         $sth->bindValue(":name", $_SESSION['username']);
         $sth->bindValue(":password", $_SESSION['pswrd']);
         $sth->execute();
