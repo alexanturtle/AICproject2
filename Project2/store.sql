@@ -39,12 +39,12 @@ VALUES
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `shop_id` int,
-  `user_name` text,
-  `password` text,
+  `user_name` varchar(15),
+  `password` varchar(64),
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
-    (`shop_id`, `user_name`, `password_hash`)
+    (`shop_id`, `user_name`, `password`)
 VALUES
      (1, 'zoya', 'password'),
       (2, 'richard','password'),
@@ -53,18 +53,16 @@ VALUES
 
 CREATE TABLE IF NOT EXISTS `customer` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `user_name` text,
-  `password` text,
+  `user_name` varchar(15),
+  `password` varchar(64),
   PRIMARY KEY (`id`)
 );
 INSERT INTO `customer` 
-    (`user_name`, `password_hash`)
+    (`user_name`, `password`)
 VALUES
      ('blablab','$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
       ('yayay', 'password'),
      ('coolcool', 'password');
-
-
 
 CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,

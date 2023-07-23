@@ -26,7 +26,7 @@
     <form action="">
           <div>
             <br><br>
-            <a href="homepage.html">Logout</a>
+            <a href="logout.html">Logout</a>
             <br><br>
             <p>there can be different pages for edit and statistics on this webpage, and we can use JQuery to show them</p>
           </div>

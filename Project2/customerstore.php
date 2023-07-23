@@ -15,7 +15,7 @@
 
         if (isset($_POST['password'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT password_hash FROM customer WHERE :username = user_name");
+            $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
@@ -34,7 +34,7 @@
             <br><br>
             <a href="itemsinstore.php">Items</a>
             <br><br>
-            <a href="homepage.html">Logout</a>
+            <a href="logout.html">Logout</a>
             <br><br>
             <p>Many types of shops</p>
           </div>
