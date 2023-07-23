@@ -20,5 +20,5 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 echo "<p>Logged out!</p>";
-echo "<a href='storemenu.php'>Return to home page</a>";
+echo "<a href='adminlogin.php'>Return to home page</a>";
 ?>

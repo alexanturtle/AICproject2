@@ -15,14 +15,20 @@
 
         if (isset($_POST['password'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
+            $sth1 = $dbh->prepare("SELECT password_hash FROM customer WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
             $hash = $hash["password"];
         }
-        if (isset($_SESSION['admin'])) {
+        if (isset($_SESSION['customer'])) {
+          $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+          $sth0 = $dbh->prepare("SELECT * FROM customer WHERE id = :customerid");
+          $sth0->bindValue(':customerid', $_SESSION['customer']);
+          $sth0->execute();
+          $customername = $sth0->fetch();
     ?>
+    <?php echo "<h1>Welcome, ".htmlspecialchars($customername['user_name'])."</h1>"; ?>
     <form action="">
           <div>
             <br><br>
@@ -37,8 +43,8 @@
         }
         else {
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST['password'], $hash)) {
-              $_SESSION['admin'] = $_POST['admin'];
-              header("Location: adminstore.php");
+              $_SESSION['customer'] = $_POST['username'];
+              header("Location: customerstore.php");
           }
           else {
               header("Location: customerlogin.php");

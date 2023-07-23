@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
-    (`shop_id`, `user_name`, `password`)
+    (`shop_id`, `user_name`, `password_hash`)
 VALUES
      (1, 'zoya', 'password'),
       (2, 'richard','password'),
@@ -58,11 +58,13 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`id`)
 );
 INSERT INTO `customer` 
-    (`user_name`, `password`)
+    (`user_name`, `password_hash`)
 VALUES
-     ('blablab','password'),
+     ('blablab','$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
       ('yayay', 'password'),
      ('coolcool', 'password');
+
+
 
 CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,

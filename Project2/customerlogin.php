@@ -12,8 +12,8 @@
               <input type="text" id="username" placeholder="Enter Username" name="username" required>
   
               <br><br>
-                <label for="pswrd">Password: </label> <br>
-                <input type="password" id="password" placeholder="Enter Password" name="pswrd" required>
+                <label for="password">Password: </label> <br>
+                <input type="password" id="password" placeholder="Enter Password" name="password" required>
 
               <br><br>
               <a href="homepage.php">Back</a>
@@ -21,6 +21,9 @@
            
       </form>
      </div>
+     <?php
+        echo password_hash("password", PASSWORD_DEFAULT);
+     ?>
   </body>
   </html>
   
