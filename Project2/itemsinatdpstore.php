@@ -12,7 +12,6 @@ require_once "config.php";
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
     $items = $getitem->fetchAll();
-    //var_dump($items);
     echo"<p>Items</p><br>";
     foreach($items as $item){
         echo"<div class='item'>";
