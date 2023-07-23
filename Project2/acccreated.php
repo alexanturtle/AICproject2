@@ -20,7 +20,7 @@ session_start();
             $sth1->execute();
             $customername= $sth1->fetch();
             echo "<h1>Welcome, Customer ID:". htmlspecialchars($currentCustomerId) ." ". htmlspecialchars($currentCustomerId['user_name'])."</h1><br>";
-            echo "<a href='storemenu'>Go to stores</a>";
+            echo "<a href='storemenu.php'>Go to stores</a>";
         }
           echo "<a href='logout.php'>Log Out</a>";
 
