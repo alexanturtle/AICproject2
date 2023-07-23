@@ -51,7 +51,7 @@ INSERT INTO `admin`
     (`shop_id`, `user_name`, `password`)
 VALUES
      (1, 'zoya', 'password'),
-      (2, 'richard`','password'),
+      (2, 'richard','password'),
      (3, 'riti', 'password');
 
 
