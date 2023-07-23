@@ -1,6 +1,6 @@
 /* css for both admin and customer css */
 body {
-    background-color: #F6E6E4;
+    background-image: url("p2-bg.jpg");
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
     color: white;
 }
