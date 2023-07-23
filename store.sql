@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `shop` (
 );
 
 INSERT INTO `shop` 
-    (`name`, `shop_type`)
+	(`name`, `shop_type`)
 VALUES
      ('Atdp_merch', 'merch_store'),
      ('Atdp_books', 'book_store'),
@@ -19,25 +19,24 @@ CREATE TABLE IF NOT EXISTS `items` (
   `price` int,
   `category` text,  
   `item_name` text,
-  `item_image` text,  
+  `item_image` text,
   PRIMARY KEY (`id`)
 );
 INSERT INTO `items` 
-    (`shop_id`, `price`, `category`, `item_name`, `item_image`)
+	(`shop_id`, `price`, `category`, `item_name`, `item_image`)
 VALUES
   (1, 24, 'clothes', 'Pink sweatshirt', 'pinksweat.jpg');
   (1, 24, 'clothes', 'blue sweatshirt', 'bluesweat.jpg');
- (1, 24, 'clothes', 'black sweatshirt', 'blacksweat.jpg');
-   (1, 24, 'clothes', 'white sweatshirt', 'whitesweat.jpg');
-  (1, 20, 'clothes', 'Pink shirt', 'pinkshirt.jpg');
-  (1, 20, 'clothes', 'blue shirt', 'blueshirt.jpg');
-  (1, 20, 'clothes', 'black shirt', 'blackshirt.jpg');
-  (1, 20, 'boba', 'white shirt', 'pinkshirt.jpg');
-  (2, 6, 'boba', 'thai milk tea', 'thai.jpg');
-  (2, 6, 'boba', 'Matcha', 'macha.jpg');
-  (2, 6, 'boba', 'Jasmine milk tea', 'jasmine.jpg');
-  (2, 6, 'boba', 'Taro', 'taro.jpg');
-  
+ (1, 24, 'clothes', 'black sweatshirt', 'pinksweat.jpg');
+   (1, 24, 'clothes', 'white sweatshirt', 'pinksweat.jpg');
+  (1, 20, 'clothes', 'Pink shirt', 'pinksweat.jpg');
+  (1, 20, 'clothes', 'blue shirt', 'pinksweat.jpg');
+  (1, 20, 'clothes', 'black shirt', 'pinksweat.jpg');
+  (1, 20, 'boba', 'white shirt', 'pinksweat.jpg');
+  (2, 6, 'boba', 'thai milk tea', 'pinksweat.jpg');
+  (2, 6, 'boba', 'Matcha', 'pinksweat.jpg');
+  (2, 6, 'boba', 'Jasmine milk tea', 'pinksweat.jpg');
+  (2, 6, 'boba', 'Taro', 'pinksweat.jpg');
   
 
 CREATE TABLE IF NOT EXISTS `admin` (
@@ -48,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
-    (`shop_id`, `user_name`, `password`)
+	(`shop_id`, `user_name`, `password`)
 VALUES
      (1, 'zoya', 'password'),
       (2, 'richard`','password'),
@@ -62,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`id`)
 );
 INSERT INTO `customer` 
-    (`user_name`, `password`)
+	(`user_name`, `password`)
 VALUES
      ('blablab','password'),
       ('yayay', 'password'),
@@ -76,8 +75,22 @@ CREATE TABLE IF NOT EXISTS `purchased` (
   PRIMARY KEY (`id`)
 );
 INSERT INTO `purchased` 
-    (`customer_id`,`item_id`,`bought`)
+	(`customer_id`,`item_id`,`bought`)
 VALUES
   (1,1,'yes'),
   (2,2,'no'),
   (3,3,'yes');
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
