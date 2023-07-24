@@ -15,7 +15,7 @@ require_once "config.php";
         <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly"><br>
         <input type="checkbox" id="topping3" name="foam" value="Cheese foam"><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
-        <button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>
+        <button type='button' id='cart' class='button' onClick='addToCart()'>Exit</button>
     </div>
 <?php
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -31,7 +31,7 @@ require_once "config.php";
         if(isset($item['item_name'])){
             echo"<p>" . $item['item_name'] . "</p>";
         }
-        $itemId = $item['id'];
+        $itemname = $item['item_name'];
         echo"<button type='button' id='topping' class='button' onClick='topping()'>Order</button><br><br>";
         // echo"</div>";
         // echo "<div id='toppingpage' class='hide'>";
@@ -43,6 +43,7 @@ require_once "config.php";
         // echo "<button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>";
         // echo "</div>";
     }
+    <button type='button' id='cart' class='button' onClick='navigateToCart()'>Logout</button>
     ?> 
 
     <script>
@@ -52,9 +53,19 @@ require_once "config.php";
     function exit(){
         $(".see").removeClass("see").addClass("hide");
     }
-    function navigateToCart() {
-            window.location.href = 'cart.php';
-     }
+    let cart = [];
+    function addToCart() {
+    const productName = $itemname;
+
+    const product = {
+        name: productName,
+    };
+    cart.push(product);
+    alert("Product added to cart!");
+    }
+    function navigateToCart(){
+        window.location.href = 'cart.php';
+    }
     </script>
 </body>
 </html>

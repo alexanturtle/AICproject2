@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Cart</h1>
-    <form action="">
+    <form action="checkout.php" method="post">
 =          <div id = "cart">
             <br><br>
             <button type='button' id='checkout' class='button' onClick='navigateToCheckout()'>Buy</button><br>
