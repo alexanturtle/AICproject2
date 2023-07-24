@@ -21,9 +21,9 @@
            
       </form>
      </div>
-     <?php
+     <!-- <?php
         echo password_hash("password", PASSWORD_DEFAULT);
-     ?>
+     ?> -->
   </body>
   </html>
   
