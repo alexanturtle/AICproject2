@@ -8,6 +8,7 @@ session_start();
 <body>
     <?php
     try {
+      password_hash($_POST['password'], PASSWORD_DEFAULT);
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         //var_dump($_POST);
         if(isset($_POST['username']) && isset($_POST['password'])){
@@ -26,6 +27,8 @@ session_start();
             $sth->bindValue(":name", $_POST['username']);
             $sth->bindValue(":password", $_POST['password']);
             $sth->execute();
+            $hash = $sth->fetch();
+            $hash = $hash["password"];
             echo "<br>Customer added!<br>";
             echo "<a href='homepage.php'>Log In</a>";
           }
