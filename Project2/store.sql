@@ -32,7 +32,12 @@ VALUES
   (1, 6, 'boba', 'thai milk tea', 'thai.jpg'),
   (1, 7, 'boba', 'Matcha', 'macha.jpg'),
   (1, 6, 'boba', 'Jasmine milk tea', 'jasmine.jpg'),
-  (1, 6, 'boba', 'Taro', 'taro.jpg');
+  (1, 6, 'boba', 'Taro', 'taro.jpg'),
+  (1, 7, 'snack', 'Popcorn Chicken', 'chicken.jpg'),
+  (1, 6, 'snack', 'French fries', 'fries.jpeg'),
+  (1, 7, 'snack', 'Lobster balls', 'lobster.jpeg'),
+  (1, 6, 'snack', 'Chicken pot-stickers', 'pot.jpeg'),
+
   
   
 

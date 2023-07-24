@@ -4,14 +4,18 @@ require_once "config.php";
 ?>
 <html>
 <head>
-    <title>Cart</title>
+    <title>Items</title>
     <link rel="stylesheet" href="items.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="toppingpage" class="hide">
         <h1>Toppings</h1>
+        <input type="checkbox" id="topping1" name="boba" value="tapioca pearls"><br>
+        <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly"><br>
+        <input type="checkbox" id="topping3" name="foam" value="Cheese foam"><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
+
     </div>
 <?php
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
