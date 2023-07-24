@@ -13,7 +13,7 @@
       try {
         password_hash("password", PASSWORD_DEFAULT);
 
-        if (isset($_POST['password'])) {
+        if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
@@ -34,7 +34,7 @@
             <br><br>
             <a href="itemsinstore.php">Items</a>
             <br><br>
-            <a href="logout.html">Logout</a>
+            <a href="logout.php">Logout</a>
             <br><br>
             <p>Many types of shops</p>
           </div>
@@ -42,12 +42,12 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST['password'], $hash)) {
-              $_SESSION['customer'] = $_POST['username'];
-              header("Location: customerstore.php");
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password']) && password_verify($_POST['password'], $hash)) {
+            $_SESSION['customer'] = $_POST['username'];
+            header("Location: customerstore.php");
           }
           else {
-              header("Location: customerlogin.php");
+            header("Location: customerlogin.php");
           }
         }
       }
