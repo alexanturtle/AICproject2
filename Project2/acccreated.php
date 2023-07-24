@@ -31,6 +31,12 @@ session_start();
             $hash = $hash["password"];
             echo "<br>Customer added!<br>";
             echo "<a href='homepage.php'>Log In</a>";
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password']) && (password_verify($_POST['password'], $hash))) {
+              $_SESSION['customer'] = $_POST['username'];
+              header("Location: customerstore.php");
+            }
+           
           }
           else{
             echo "<br>This username already exists ya dumbo<br>";
