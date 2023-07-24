@@ -19,6 +19,9 @@
               <a href="homepage.php">Back</a>
               <input type="submit" value="Log In">
       </form>
+      <?php
+      
+      ?>
     </div>
   </body>
   </html>

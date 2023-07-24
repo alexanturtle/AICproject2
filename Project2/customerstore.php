@@ -11,7 +11,6 @@
     <h1>Store</h1>
     <?php
       try {
-       
         if (isset($_POST['password']) && isset($_POST['username'])) {
             password_hash($_POST['password'], PASSWORD_DEFAULT);
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);

@@ -8,11 +8,18 @@
     <form action="">
 =          <div id = "cart">
             <br><br>
-            <a href="checkout.html">Logout</a>
-            <a href="homepage.html">Logout</a>
+            <button type='button' id='checkout' class='button' onClick='navigateToCheckout()'>Buy</button><br>
+            <button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>
             <br><br>
           </div>
-
     </form>
+    <script>
+    function navigateToCheckout() {
+            window.location.href = 'checkout.php';
+     }
+    function navigateToHomePage() {
+            window.location.href = 'homepage.php';
+     }
+    </script>
 </body>
 </html>

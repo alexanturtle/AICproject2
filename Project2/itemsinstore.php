@@ -16,8 +16,6 @@ require_once "config.php";
         <input type="checkbox" id="topping3" name="foam" value="Cheese foam"><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
         <button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>
-
-
     </div>
 <?php
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -33,8 +31,17 @@ require_once "config.php";
         if(isset($item['item_name'])){
             echo"<p>" . $item['item_name'] . "</p>";
         }
+        $itemId = $item['id'];
         echo"<button type='button' id='topping' class='button' onClick='topping()'>Order</button><br><br>";
-        echo"</div>";
+        // echo"</div>";
+        // echo "<div id='toppingpage' class='hide'>";
+        // echo "<h1>Toppings</h1>";
+        // echo "<input type='checkbox' id='topping1' name='boba' value='tapioca pearls'><br>";
+        // echo "<input type='checkbox' id='topping2' name='jelly' value='Lychee jelly'><br>";
+        // echo "<input type='checkbox' id='topping3' name='foam' value='Cheese foam'><br>";
+        // echo "<button type='button' id='back' class='button' onClick='exit()'>Exit</button>";
+        // echo "<button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>";
+        // echo "</div>";
     }
     ?> 
 
