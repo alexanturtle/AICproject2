@@ -9,21 +9,35 @@ session_start();
     <?php
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`) VALUES (`:name`, `:password`)"); 
-        $sth->bindValue(":name", $_SESSION['username']);
-        $sth->bindValue(":password", $_SESSION['pswrd']);
-        $sth->execute();
-        $customers= $sth->fetchAll();
-            if (isset($_SESSION['username'])) {
-            $currentCustomerId = $_SESSION['username'];
-            $sth1 = $dbh->prepare("SELECT * FROM customer WHERE id=:customerID"); 
-            $sth1->bindValue(":customerID", $currentCustomerId);
-            $sth1->execute();
-            $customername= $sth1->fetch();
-            echo "<h1>Welcome, Customer ID:". htmlspecialchars($currentCustomerId) ." ". htmlspecialchars($currentCustomerId['user_name'])."</h1><br>";
-            echo "<a href='storemenu'>Go to stores</a>";
+        //var_dump($_POST);
+        if(isset($_POST['username']) && isset($_POST['password'])){
+          $get = $dbh->prepare("SELECT user_name FROM customer"); 
+          $get->execute();
+          $users= $get->fetchAll();
+          //var_dump($users);
+          $exist = False;
+          foreach($users as $user){
+            if($_POST['username'] == $user["user_name"]){
+              $exist = True;
+            }
+          }
+          if(!$exist){
+            $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`) VALUES (:name, :password)"); 
+            $sth->bindValue(":name", $_POST['username']);
+            $sth->bindValue(":password", $_POST['password']);
+            $sth->execute();
+            echo "<br>Customer added!<br>";
+            echo "<a href='homepage.php'>Log In</a>";
+          }
+          else{
+            echo "<br>This username already exists ya dumbo<br>";
+            echo "<a href='newcustomer.php'>Back</a>";
+          }
         }
-          echo "<a href='logout.php'>Log Out</a>";
+        else{
+          echo "Invalid username or password";
+          echo "<a href='newcustomer.php'>Back</a>";
+        }
         }catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
   }

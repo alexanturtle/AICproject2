@@ -7,17 +7,17 @@
   <body>
     <div class="inputbox">
       <h1>Create an Account</h1>
-      <form action="acccreated.php" method="get">
+      <form action="acccreated.php" method="post">
               <label for="username">Username: </label> <br>
               <input type="text" id="username" placeholder="Enter Username" name="username" required>
   
               <br><br>
                 <label for="pswrd">Password: </label> <br>
-                <input type="password" id="password" placeholder="Enter Password" name="pswrd" required>
+                <input type="password" id="password" placeholder="Enter Password" name="password" required>
 
               <br><br>
               <a href="homepage.php">Back</a>
-              <a href="acccreated.php">Create</a>
+              <input type='submit' id='create' value='Create'>
             
       </form>
     </div>
