@@ -18,5 +18,10 @@
                 <a class="login" href="adminlogin.php">Admin Login</a>
             </div>
         </div>
+        <?php
+        if (isset($_SESSION['customer'])) {
+          header("Location: customerstore.php");
+        }
+     ?>
     </body>
 </html>

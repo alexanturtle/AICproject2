@@ -21,9 +21,11 @@
            
       </form>
      </div>
-     <!-- <?php
-        echo password_hash("password", PASSWORD_DEFAULT);
-     ?> -->
+     <?php
+        if (isset($_SESSION['customer'])) {
+          header("Location: customerstore.php");
+        }
+     ?>
   </body>
   </html>
   
