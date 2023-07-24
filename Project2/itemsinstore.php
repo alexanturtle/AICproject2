@@ -15,6 +15,8 @@ require_once "config.php";
         <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly"><br>
         <input type="checkbox" id="topping3" name="foam" value="Cheese foam"><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
+        <button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>
+
 
     </div>
 <?php
@@ -43,6 +45,9 @@ require_once "config.php";
     function exit(){
         $(".see").removeClass("see").addClass("hide");
     }
+    function navigateToCart() {
+            window.location.href = 'cart.php';
+     }
     </script>
 </body>
 </html>
