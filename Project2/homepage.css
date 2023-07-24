@@ -6,6 +6,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 h1 {
+    margin-top: 35px;
     color: #5B6D5B;
 }
 #links {
