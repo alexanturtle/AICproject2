@@ -11,7 +11,7 @@
     <h1>Store</h1>
     <?php
       try {
-        password_hash("password", PASSWORD_DEFAULT);
+        password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -20,6 +20,16 @@
             $sth1->execute();
             $hash = $sth1->fetch();
             $hash = $hash["password"];
+
+            //debug
+            echo $hash;
+            echo "<br>";
+            if (password_verify($_POST['password'], $hash)) {
+              echo "password correct";
+            }
+            else {
+              echo "password incorrect";
+            }
         }
         if (isset($_SESSION['customer'])) {
           $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -28,7 +38,7 @@
           $sth0->execute();
           $customername = $sth0->fetch();
     ?>
-    <?php echo "<h1>Welcome, ".htmlspecialchars($customername['user_name'])."</h1>"; ?>
+    <!-- <?php echo "<h1>Welcome, ".htmlspecialchars($customername['user_name'])."</h1>"; ?> -->
     <form action="">
           <div>
             <br><br>
