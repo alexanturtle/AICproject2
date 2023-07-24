@@ -47,7 +47,7 @@ require_once "config.php";
         // echo "</div>";
     }
     ?> 
-    <button type='button' id='cart' class='button' onClick='navigateToCart()'>Logout</button>
+    <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
     <script>
     function topping(){
         $(".hide").removeClass("hide").addClass("see");
