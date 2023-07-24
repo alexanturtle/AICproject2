@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <body>
-<p><a href="itemsinatdpstore.php"><img src="store.png" style="width:50px;height:50px;"></a></p>
+<p><a href="itemsinstore.php"><img src="download.png" style="width:50px;height:50px;"></a></p><br>
+<h1>Boba Shop</h1>
 </body>
 </html>
