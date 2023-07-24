@@ -11,11 +11,14 @@ require_once "config.php";
 <body>
 <div id="toppingpage" class="hide">
         <h1>Toppings</h1>
-        <input type="checkbox" id="topping1" name="boba" value="tapioca pearls"><br>
-        <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly"><br>
-        <input type="checkbox" id="topping3" name="foam" value="Cheese foam"><br>
+        <input type="checkbox" id="topping1" name="boba" value="tapioca pearls">
+        <label for="topping1"> tapioca pearls</label><br>
+        <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly">
+        <label for="topping2">Lychee jelly</label><br>
+        <input type="checkbox" id="topping3" name="foam" value="Cheese foam">
+        <label for="topping3"> Cheese foam</label><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
-        <button type='button' id='cart' class='button' onClick='addToCart()'>Exit</button>
+        <button type='button' id='cart' class='button' onClick='addToCart()'>Add to cart</button>
     </div>
 <?php
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
