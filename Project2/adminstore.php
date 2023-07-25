@@ -41,9 +41,14 @@
           echo "<td>".$item['item_name']."</td>";
           echo "<td>"."$".$item['price'].""."</td>";
           echo "<td>".$item['item_image']."</td>";
+          echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' /></button></td>";
+          echo "<td><button type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button></td>";
           echo "</tr>";
         }
         echo "</table>";
+        echo "<div id='add-button'>";
+        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
+        echo "</div>";
     ?>
 
     <!-- <div id="toppingpage" class="hide">

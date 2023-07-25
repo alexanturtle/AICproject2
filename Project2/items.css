@@ -110,8 +110,28 @@ table{
     /* border: solid black 2px; */
 }
 
+#adminedittable tr {
+    border: 2px solid #926E6F;
+}
+
 #adminedittable td {
     margin: none;
     padding: 10px;
     border: 2px solid #926E6F;
+}
+
+.adminbutton {
+    border: 0px;
+    height: 30px;
+    width: 30px;
+}
+
+#add-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 30px;
 }
