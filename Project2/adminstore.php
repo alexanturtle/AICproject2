@@ -13,7 +13,7 @@
       try {
        $hashedpassword= password_hash("password", PASSWORD_DEFAULT);
 
-        if (isset($_POST['password']&& isset($_POST['username']))) {
+        if (isset($_POST['password'])&& isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT * FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
