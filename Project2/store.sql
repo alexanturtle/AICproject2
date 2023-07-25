@@ -78,9 +78,3 @@ CREATE TABLE IF NOT EXISTS `purchased` (
   `bought` text,
   PRIMARY KEY (`id`)
 );
-INSERT INTO `purchased` 
-    (`customer_id`,`item_id`,`bought`)
-VALUES
-  (1,1,'yes'),
-  (2,2,'no'),
-  (3,3,'yes');
