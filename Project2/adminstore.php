@@ -19,7 +19,7 @@
             $hash = $sth1->fetch();
             $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $passwordhash = $hash["password"];
-            $password = $_POST['password']
+            $password = $_POST['password'];
         }
        else{
           header("Location: adminlogin.php");
