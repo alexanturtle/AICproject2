@@ -39,7 +39,7 @@ VALUES
   (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg'),
   (1, 5, 'smoothie', 'Strawberry smoothie', 'strawberrysm.jpg'),
   (1, 5, 'smoothie', 'Banana smoothie', 'banana.jpg'),
-  (1, 5, 'smoothie', 'Chocolate', 'chocolate.jpg'),
+  (1, 5, 'smoothie', 'Chocolate smoothie', 'chocolate.jpg'),
   (1, 5, 'smoothie', 'Mango smoothie', 'mango.jpg');
 
   
