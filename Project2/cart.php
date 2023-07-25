@@ -13,6 +13,21 @@
             <br><br>
           </div>
     </form>
+    <?php
+    try {
+        $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+                $sth = $dbh->prepare("SELECT `items.item_name` from items INNER JOIN purchased ON items.id=purchased.item_id;"); 
+                $sth->execute();
+                $items= $sth->fetchAll();
+                foreach($items as $item){
+                 echo "<p>".$item['item_name']."</p>";
+            }
+        }
+           
+    catch (PDOException $e) {
+      echo "<p>Error: {$e->getMessage()}</p>";
+    }
+?>
     <script>
     function navigateToCheckout() {
             window.location.href = 'checkout.php';
