@@ -13,7 +13,7 @@
       try {
        $hashedpassword= password_hash("password", PASSWORD_DEFAULT);
 
-        if (isset($_POST['password'])) {
+        if (isset($_POST['password']&& isset($_POST['username']))) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT * FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
@@ -21,6 +21,8 @@
             $hash = $sth1->fetch();
             $user = $hash['user_name'];
             $hash = $hash["password"];
+        }else{
+          header("Location: adminlogin.php");
         }
         if (isset($_SESSION['admin'])) {
     ?>
@@ -36,7 +38,7 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($hashedpassword, $hash)) {
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify("password", $hash)) {
               $_SESSION['admin'] = $_POST['admin'];
               header("Location: adminstore.php");
           }
