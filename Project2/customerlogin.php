@@ -7,7 +7,7 @@
   <body>
      <div class="inputbox">
       <h1>Customer Login</h1>
-      <form action="customerstore.php" method="post">
+      <form  id="myForm" action="customerstore.php" method="post">
               <label for="username">Username: </label> <br>
               <input type="text" id="username" placeholder="Enter Username" name="username" required>
   
@@ -17,7 +17,7 @@
 
               <br><br>
               <a href="homepage.php">Back</a>
-              <input type="submit" value="Log In">
+              <input type="submit" value="Log In ">
            
       </form>
      </div>
@@ -26,6 +26,12 @@
           header("Location: customerstore.php");
         }
      ?>
+     <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      window.location.href = "itemsinstore.php";
+    });
+  </script>
   </body>
   </html>
   
