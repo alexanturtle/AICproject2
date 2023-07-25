@@ -38,7 +38,7 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify("password", $hash)) {
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST["password"], $hash)) {
               $_SESSION['admin'] = $_POST['admin'];
               header("Location: adminstore.php");
           }

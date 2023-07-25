@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `admin` (
 INSERT INTO `admin` 
     (`shop_id`, `user_name`, `password`)
 VALUES
-     (1, 'zoya', 'password'),
-      (2, 'richard','password'),
-     (3, 'riti', 'password');
+     (1, 'zoya', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq'),
+      (2, 'richard','$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq'),
+     (3, 'riti', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq');
 
 
 CREATE TABLE IF NOT EXISTS `customer` (
