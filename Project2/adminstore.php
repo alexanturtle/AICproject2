@@ -6,6 +6,8 @@
 <html lang="en">
 <head>
     <title>Store (Admin)</title>
+    <link rel="stylesheet" href="items.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Store (Admin)</h1>
@@ -26,30 +28,95 @@
         }
         if (isset($_SESSION['admin'])) {
     ?>
-    <form action="">
-          <div>
-            <br><br>
-            <a href="logout.php">Logout</a>
-            <br><br>
-            <p>there can be different pages for edit and statistics on this webpage, and we can use JQuery to show them</p>
-          </div>
 
-    </form>
     <?php
+        $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+        $sth2 = $dbh->prepare("SELECT * FROM items");
+        $sth2->execute();
+        $items = $sth2->fetchAll();
+
+        echo "<table id='adminedittable'>";
+        foreach ($items as $item) {
+          echo "<tr>";
+          echo "<td>".$item['item_name']."</td>";
+          echo "<td>"."$".$item['price'].""."</td>";
+          echo "<td>".$item['item_image']."</td>";
+          echo "</tr>";
         }
-        else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($password, $passwordhash)) {
-              $_SESSION['admin'] = $_POST['username'];
-              //header("Location: adminstore.php");
+        echo "</table>";
+    ?>
+
+    <!-- <div id="toppingpage" class="hide">
+        <h1 id="itemname">Item Name</h1>
+        <h2>Toppings</h2>
+        <input type="checkbox" id="topping1" name="boba" value="tapioca pearls">
+        <label for="topping1"> Tapioca Pearls</label><br>
+        <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly">
+        <label for="topping2">Lychee Jelly</label><br>
+        <input type="checkbox" id="topping3" name="foam" value="Cheese foam">
+        <label for="topping3"> Cheese Foam</label><br>
+        <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
+        <button type='button' id='cart' class='button' onClick='addToCart()'>Add to cart</button>
+    </div>
+    <?php
+      // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+      // $getitem = $dbh->prepare("SELECT * FROM items");
+      // $getitem->execute();
+      // $items = $getitem->fetchAll();
+      // echo "<div class='itemset'>";
+      // foreach($items as $item){
+      //     echo"<div class='item'>";
+      //     if(isset($item['item_image'])){
+      //         echo"<img src='" . $item['item_image'] . "' alt='no image' class='image'>";
+      //     }
+      //     if(isset($item['item_name'])){
+      //         echo '<p class="itemname">' . $item['item_name'] . "</p>";
+      //     }
+      //     $itemname = $item['item_name'];
+      //     echo"<button type='button' id='{$item['item_name']}' class='button' onClick='topping(this.id)'>Order</button><br><br>";
+      //     echo"</div>";
+      // }
+      // echo "</div>";
+      ?> 
+      <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
+      <script>
+      function topping(name){
+          $(".hide").removeClass("hide").addClass("see");
+          document.getElementById("itemname").innerHTML = name;
+      }
+      function exit(){
+          $(".see").removeClass("see").addClass("hide");
+      }
+      let cart = [];
+      function addToCart() {
+      const productName = $itemname;
+
+      const product = {
+          name: productName,
+      };
+      cart.push(product);
+      alert("Product added to cart!");
+      }
+      function navigateToCart(){
+          window.location.href = 'cart.php';
+      }
+      </script> -->
+
+      <?php
           }
           else {
-              header("Location: adminlogin.php");
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($password, $passwordhash)) {
+                $_SESSION['admin'] = $_POST['username'];
+                //header("Location: adminstore.php");
+            }
+            else {
+                header("Location: adminlogin.php");
+            }
           }
         }
-      }
-      catch (PDOException $e) {
-        echo "<p>Error connecting to database!</p>";
-      }
-    ?>
+        catch (PDOException $e) {
+          echo "<p>Error connecting to database!</p>";
+        }
+      ?>
 </body>
 </html>

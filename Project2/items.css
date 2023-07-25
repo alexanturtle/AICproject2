@@ -109,3 +109,9 @@ table{
     display: block;
     /* border: solid black 2px; */
 }
+
+#adminedittable td {
+    margin: none;
+    padding: 10px;
+    border: 2px solid #926E6F;
+}
