@@ -11,8 +11,6 @@
     <h1>Store (Admin)</h1>
     <?php
       try {
-       $hashedpassword= password_hash("password", PASSWORD_DEFAULT);
-
         if (isset($_POST['password'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
@@ -22,6 +20,7 @@
             $user = $hash['user_name'];
             $hash = $hash["password"];
         }
+        password_hash($_POST['password'], PASSWORD_DEFAULT);
       //  else{
       //     header("Location: adminlogin.php");
       //   }
@@ -43,7 +42,7 @@
           //     $_SESSION['admin'] = $_POST['admin'];
           //     header("Location: adminstore.php");
           // }
-          if (password_verify($_POST["password"], $hash)) {
+          if (password_verify($_POST['password'], $hash)) {
             $_SESSION['admin'] = $_POST['admin'];
             header("Location: adminstore.php");
         }
