@@ -3,7 +3,12 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#header {
+    display: inline-block;
+}
+
 h1 {
+    float: left;
     text-align: center;
     color: #926E6F;
 }

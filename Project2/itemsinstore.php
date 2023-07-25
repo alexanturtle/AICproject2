@@ -36,7 +36,10 @@ require_once "config.php";
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
     $items = $getitem->fetchAll();
-    echo"<h1>Store</h1><br>";
+    echo "<div id='header'";
+    echo"<h1>Store</h1>";
+    echo "<button type='button'><img class='adminbutton' src='cart-icon.png' alt='cart-button' /></button>";
+    echo "</div>";
     echo "<div class='itemset'>";
     foreach($items as $item){
         echo"<div class='item'>";
