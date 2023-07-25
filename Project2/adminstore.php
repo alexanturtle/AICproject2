@@ -21,9 +21,10 @@
             $hash = $sth1->fetch();
             $user = $hash['user_name'];
             $hash = $hash["password"];
-        }else{
-          header("Location: adminlogin.php");
         }
+       // else{
+        //   header("Location: adminlogin.php");
+        // }
         if (isset($_SESSION['admin'])) {
     ?>
     <form action="">
