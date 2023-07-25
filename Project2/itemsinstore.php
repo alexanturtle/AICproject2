@@ -36,9 +36,9 @@ require_once "config.php";
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
     $items = $getitem->fetchAll();
-    echo "<div id='header'";
-    echo"<h1>Store</h1>";
-    echo "<button type='button'><img class='adminbutton' src='cart-icon.png' alt='cart-button' /></button>";
+    echo "<div id='header'>";
+    echo "<h1>Store</h1>";
+    echo "<button type='button'><img class='adminbutton' src='cart-icon.png' alt='cart-button' id='cart-button' onClick='navigateToCart()' /></button>";
     echo "</div>";
     echo "<div class='itemset'>";
     foreach($items as $item){
@@ -63,7 +63,7 @@ require_once "config.php";
     }
     echo "</div>";
     ?> 
-    <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
+    <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
     function topping(name){
         //alert("name=" + name+ " category="+ category);
