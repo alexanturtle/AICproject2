@@ -39,10 +39,14 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST["password"], $hashedpassword)) {
-              $_SESSION['admin'] = $_POST['admin'];
-              header("Location: adminstore.php");
-          }
+          // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST["password"], $hashedpassword)) {
+          //     $_SESSION['admin'] = $_POST['admin'];
+          //     header("Location: adminstore.php");
+          // }
+          if (password_verify($_POST["password"], $hashedpassword)) {
+            $_SESSION['admin'] = $_POST['admin'];
+            header("Location: adminstore.php");
+        }
           else {
               header("Location: adminlogin.php");
           }
