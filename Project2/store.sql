@@ -37,10 +37,10 @@ VALUES
   (1, 6, 'snack', 'French Fries', 'fries.jpeg'),
   (1, 7, 'snack', 'Lobster Balls', 'lobster.jpeg'),
   (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg'),
-  (1, 5, 'smoothie', 'Strawberry smoothie', 'strawberrysm.jpg'),
-  (1, 5, 'smoothie', 'Banana smoothie', 'banana.jpg'),
-  (1, 5, 'smoothie', 'Chocolate smoothie', 'chocolate.jpg'),
-  (1, 5, 'smoothie', 'Mango smoothie', 'mango.jpg');
+  (1, 5, 'smoothie', 'Strawberry Smoothie', 'strawberrysm.jpg'),
+  (1, 5, 'smoothie', 'Banana Smoothie', 'banana.jpg'),
+  (1, 5, 'smoothie', 'Chocolate Smoothie', 'chocolate.jpg'),
+  (1, 5, 'smoothie', 'Mango Smoothie', 'mango.jpg');
 
   
 CREATE TABLE IF NOT EXISTS `admin` (
