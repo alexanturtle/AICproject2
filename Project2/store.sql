@@ -36,7 +36,7 @@ VALUES
   (1, 7, 'snack', 'Popcorn Chicken', 'chicken.jpg'),
   (1, 6, 'snack', 'French Fries', 'fries.jpeg'),
   (1, 7, 'snack', 'Lobster Balls', 'lobster.jpeg'),
-  (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg'),
+  (1, 6, 'snack', 'Chicken Pot-Stickers', 'pot.jpeg'),
   (1, 5, 'smoothie', 'Strawberry Smoothie', 'strawberrysm.jpg'),
   (1, 5, 'smoothie', 'Banana Smoothie', 'banana.jpg'),
   (1, 5, 'smoothie', 'Chocolate Smoothie', 'chocolate.jpg'),
