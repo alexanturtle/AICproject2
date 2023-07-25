@@ -11,19 +11,18 @@
     <h1>Store (Admin)</h1>
     <?php
       try {
-        if (isset($_POST['password'])) {
+        if (isset($_POST['password'])&&isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
-            $user = $hash['user_name'];
+            $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $hash = $hash["password"];
         }
-        $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-      //  else{
-      //     header("Location: adminlogin.php");
-      //   }
+       else{
+          header("Location: adminlogin.php");
+        }
         if (isset($_SESSION['admin'])) {
     ?>
     <form action="">
