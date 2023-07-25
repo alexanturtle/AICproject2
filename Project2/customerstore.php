@@ -40,7 +40,8 @@
     <form action="">
           <div>
             <br><br>
-            <a href="itemsinstore.php">Items</a>
+            <p><a href="itemsinstore.php"><img src="download.png" style="width:150px;height:150px;"></a></p><br>
+            <h2>Go to items</h2>
             <br><br>
             <a href="logout.php">Logout</a>
             <br><br>
@@ -56,8 +57,7 @@
             header("Location: customerstore.php");
           }
           else {
-            echo "wrong";
-            //header("Location: customerlogin.php");
+            header("Location: customerlogin.php");
           }
         }
       }

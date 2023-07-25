@@ -15,10 +15,11 @@
 
         if (isset($_POST['password'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
+            $sth1 = $dbh->prepare("SELECT * FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
+            $user = $hash['user_name'];
             $hash = $hash["password"];
         }
         if (isset($_SESSION['admin'])) {
