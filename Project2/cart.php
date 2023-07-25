@@ -48,7 +48,7 @@ require_once "config.php";
     function navigateToHomePage() {
             window.location.href = 'homepage.php';
      }
-     function navigateToCartPage() {
+     function navigateToItemPage() {
             window.location.href = 'itemsinstore.php';
      }
     </script>
