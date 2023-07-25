@@ -8,7 +8,7 @@ session_start();
 <body>
     <?php
     try {
-      password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         //var_dump($_POST);
         if(isset($_POST['username']) && isset($_POST['password'])){
@@ -25,17 +25,10 @@ session_start();
           if(!$exist){
             $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`) VALUES (:name, :password)"); 
             $sth->bindValue(":name", $_POST['username']);
-            $sth->bindValue(":password", $_POST['password']);
+            $sth->bindValue(":password", $hashedPassword);
             $sth->execute();
-            $hash = $sth->fetch();
-            $hash = $hash["password"];
             echo "<br>Customer added!<br>";
             echo "<a href='homepage.php'>Log In</a>";
-            
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password']) && (password_verify($_POST['password'], $hash))) {
-              $_SESSION['customer'] = $_POST['username'];
-              header("Location: customerstore.php");
-            }
            
           }
           else{
