@@ -36,7 +36,12 @@ VALUES
   (1, 7, 'snack', 'Popcorn Chicken', 'chicken.jpg'),
   (1, 6, 'snack', 'French Fries', 'fries.jpeg'),
   (1, 7, 'snack', 'Lobster Balls', 'lobster.jpeg'),
-  (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg');
+  (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg'),
+  (1, 5, 'smoothie', 'Strawberry smoothie', 'strawberrysm.jpg'),
+  (1, 5, 'smoothie', 'Banana smoothie', 'banana.jpg'),
+  (1, 5, 'smoothie', 'Chocolate', 'chocolate.jpg'),
+  (1, 5, 'smoothie', 'Mango smoothie', 'mango.jpg');
+
   
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
