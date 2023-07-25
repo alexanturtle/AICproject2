@@ -4,7 +4,15 @@ body {
 }
 
 td{
-    text-align: left;
+    text-align: center;
+    font-size: 25px;
+}
+th{
+    font-size: 35px;
+}
+h1{
+    text-align: center;
+    font-size: 45px;
 }
     
 table{
@@ -22,4 +30,21 @@ table{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+     display: block;
+  }
+
+  p{
+    text-align: center;
+    font-size: 30px;
+  }
+  img{
+    align-items: center;
+  }
+
+  #image{
+    margin-left: auto;
+    margin-right: auto;
+     display: block;
   }

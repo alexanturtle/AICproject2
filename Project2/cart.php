@@ -13,19 +13,19 @@ require_once "config.php";
      <?php
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-                $sth = $dbh->prepare("SELECT items.item_name FROM items INNER JOIN purchased ON items.id=purchased.item_id"); 
+                $sth = $dbh->prepare("SELECT items.item_name, items.price FROM items INNER JOIN purchased ON items.id=purchased.item_id"); 
                 $sth->execute();
                 $items= $sth->fetchAll();
                 echo "<table>";
-                echo "<tr>";
                 echo "<th>Item</th>";
                 echo "<th>Price</th>";
                 foreach($items as $item){
+                  echo "<tr>";
             //  echo "<p>"" ".$item['price']."</p>";
-              echo "<td>."$item['item_name']."</td>";
+              echo "<td>".$item['item_name']."</td>";
               echo "<td>".$item['price']."</td>";
+              echo "</tr>";
             }
-            echo "</tr>";
             echo "</table>";
         }    
     catch (PDOException $e) {
@@ -33,7 +33,7 @@ require_once "config.php";
     }
 ?>
    <form action="checkout.php" method="post">
-=          <div id = "cart">
+       <div id="cart">
             <br><br>
             <button type='button' id='back' class='button' onClick='navigateToItemPage()'>Back to Items</button>
             <button type='button' id='checkout' class='button' onClick='navigateToCheckout()'>Buy</button><br>
