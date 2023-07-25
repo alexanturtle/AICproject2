@@ -51,16 +51,25 @@ h1 {
     width: 120px;
 }
 
+#back, #cart {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .see {
     background-color: rgba(242, 247, 242, 0.9);
+    border-radius: 20px;
     position: fixed;
     text-align: center;
     padding-bottom: 400px;
     width: 50%;
     height: 15%;
     z-index: 2;
+    transform: translateX(-50%);
     margin-top: 100px;
-    margin-left: 350px;
+    margin-left: 50%;
+    margin-right: 50%;
     font-size: 20px;
     color: rgb(97, 84, 84);
 }
