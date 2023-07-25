@@ -11,11 +11,11 @@
     <h1>Store (Admin)</h1>
     <?php
       try {
-        password_hash("password", PASSWORD_DEFAULT);
+       $hashedpassword= password_hash("password", PASSWORD_DEFAULT);
 
         if (isset($_POST['password'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT * FROM admin WHERE :username = user_name");
+            $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
@@ -35,7 +35,7 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST['password'], $hash)) {
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($hashedpassword, $hash)) {
               $_SESSION['admin'] = $_POST['admin'];
               header("Location: adminstore.php");
           }

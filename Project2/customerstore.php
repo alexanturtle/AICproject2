@@ -13,16 +13,16 @@
       try {
         if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT * FROM customer WHERE :username = user_name");
+            $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
-
             $sth1->execute();
             $hash = $sth1->fetch();
             
-            $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $hash = $hash['password'];
-           
-            if (password_verify($password_hash, $hash)) {
+            password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $hash = $hash["password"];
+
+            //debug
+            if (password_verify($_POST['password'], $hash)) {
               echo "password correct";
             }
             else {
