@@ -11,7 +11,7 @@
     <h1>Store (Admin)</h1>
     <?php
       try {
-        if (isset($_POST['password'])&&isset($_POST['username'])) {
+        if (isset($_POST['password'])&& isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
@@ -37,9 +37,15 @@
     <?php
         }
         else {
+<<<<<<< HEAD
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST['password'], $password)) {
               $_SESSION['admin'] = $_POST['username'];
               //header("Location: adminstore.php");
+=======
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST["password"], $hash)) {
+              $_SESSION['admin'] = $_POST['admin'];
+              header("Location: adminstore.php");
+>>>>>>> 19272ac6472bdda859b3d25650ca5ff8ad12a126
           }
           else {
               header("Location: adminlogin.php");
