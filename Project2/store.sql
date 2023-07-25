@@ -25,18 +25,18 @@ CREATE TABLE IF NOT EXISTS `items` (
 INSERT INTO `items` 
     (`shop_id`, `price`, `category`, `item_name`, `item_image`)
 VALUES
- (1, 6, 'boba', 'rose milk tea', 'rose.jpg'),
-  (1, 6, 'boba', 'earl grey milk tea', 'earl.jpg'),
-  (1, 6, 'boba', 'caramel milk tea', 'caramel.jpg'),
-  (1, 7, 'boba', 'strawberry milk tea', 'strawberry.jpg'),
-  (1, 6, 'boba', 'thai milk tea', 'thai.jpg'),
+ (1, 6, 'boba', 'Rose Milk Tea', 'rose.jpg'),
+  (1, 6, 'boba', 'Earl Grey Milk Tea', 'earl.jpg'),
+  (1, 6, 'boba', 'Caramel Milk Tea', 'caramel.jpg'),
+  (1, 7, 'boba', 'Strawberry Milk Tea', 'strawberry.jpg'),
+  (1, 6, 'boba', 'Thai Milk Tea', 'thai.jpg'),
   (1, 7, 'boba', 'Matcha', 'macha.jpg'),
-  (1, 6, 'boba', 'Jasmine milk tea', 'jasmine.jpg'),
+  (1, 6, 'boba', 'Jasmine Milk Tea', 'jasmine.jpg'),
   (1, 6, 'boba', 'Taro', 'taro.jpg'),
   (1, 7, 'snack', 'Popcorn Chicken', 'chicken.jpg'),
-  (1, 6, 'snack', 'French fries', 'fries.jpeg'),
-  (1, 7, 'snack', 'Lobster balls', 'lobster.jpeg'),
-  (1, 6, 'snack', 'Chicken pot-stickers', 'pot.jpeg');
+  (1, 6, 'snack', 'French Fries', 'fries.jpeg'),
+  (1, 7, 'snack', 'Lobster Balls', 'lobster.jpeg'),
+  (1, 6, 'snack', 'Chicken Pot-stickers', 'pot.jpeg');
   
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,

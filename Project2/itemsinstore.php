@@ -25,18 +25,19 @@ require_once "config.php";
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
     $items = $getitem->fetchAll();
-    echo"<p>Items</p><br>";
+    echo"<h1>Store</h1><br>";
+    echo "<div class='itemset'>";
     foreach($items as $item){
         echo"<div class='item'>";
         if(isset($item['item_image'])){
             echo"<img src='" . $item['item_image'] . "' alt='no image' class='image'>";
         }
         if(isset($item['item_name'])){
-            echo"<p>" . $item['item_name'] . "</p>";
+            echo '<p class="itemname">' . $item['item_name'] . "</p>";
         }
         $itemname = $item['item_name'];
         echo"<button type='button' id='topping' class='button' onClick='topping()'>Order</button><br><br>";
-        // echo"</div>";
+        echo"</div>";
         // echo "<div id='toppingpage' class='hide'>";
         // echo "<h1>Toppings</h1>";
         // echo "<input type='checkbox' id='topping1' name='boba' value='tapioca pearls'><br>";
@@ -46,6 +47,7 @@ require_once "config.php";
         // echo "<button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>";
         // echo "</div>";
     }
+    echo "</div>";
     ?> 
     <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
     <script>
