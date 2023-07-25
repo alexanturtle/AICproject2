@@ -13,11 +13,11 @@ require_once "config.php";
         <h1 id="itemname">Item Name</h1>
         <h2>Toppings</h2>
         <input type="checkbox" id="topping1" name="boba" value="tapioca pearls">
-        <label for="topping1"> tapioca pearls</label><br>
+        <label for="topping1"> Tapioca Pearls</label><br>
         <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly">
-        <label for="topping2">Lychee jelly</label><br>
+        <label for="topping2">Lychee Jelly</label><br>
         <input type="checkbox" id="topping3" name="foam" value="Cheese foam">
-        <label for="topping3"> Cheese foam</label><br>
+        <label for="topping3"> Cheese Foam</label><br>
         <button type='button' id='back' class='button' onClick='exit()'>Exit</button>
         <button type='button' id='cart' class='button' onClick='addToCart()'>Add to cart</button>
     </div>
