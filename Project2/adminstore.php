@@ -37,17 +37,16 @@
 
         echo "<table id='adminedittable'>";
         foreach ($items as $item) {
-          echo "<tr>";
+          echo "<tr id='item".$item['id']."'>";
           echo "<td>".$item['item_name']."</td>";
           echo "<td>"."$".$item['price'].""."</td>";
-          echo "<td>".$item['item_image']."</td>";
-          echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' /></button></td>";
-          echo "<td><button type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button></td>";
+          echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
+          echo "<td><button type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' onClick='trash()' /></button></td>";
           echo "</tr>";
         }
         echo "</table>";
         echo "<div id='add-button'>";
-        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
+        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='hide()' /></button>";
         echo "</div>";
     ?>
 
