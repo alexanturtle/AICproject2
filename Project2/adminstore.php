@@ -18,7 +18,7 @@
             $sth1->execute();
             $hash = $sth1->fetch();
             $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $hash = $hash["password"];
+            $password = $hash["password"];
         }
        else{
           header("Location: adminlogin.php");
@@ -37,9 +37,9 @@
     <?php
         }
         else {
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($userpassword, $hash)) {
-              $_SESSION['admin'] = $_POST['admin'];
-              header("Location: adminstore.php");
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && password_verify($_POST['password'], $password)) {
+              $_SESSION['admin'] = $_POST['username'];
+              //header("Location: adminstore.php");
           }
           else {
               header("Location: adminlogin.php");
