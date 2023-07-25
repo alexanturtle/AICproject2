@@ -10,7 +10,8 @@ require_once "config.php";
 </head>
 <body>
 <div id="toppingpage" class="hide">
-        <h1>Toppings</h1>
+        <h1 id="itemname">Item Name</h1>
+        <h2>Toppings</h2>
         <input type="checkbox" id="topping1" name="boba" value="tapioca pearls">
         <label for="topping1"> tapioca pearls</label><br>
         <input type="checkbox" id="topping2" name="jelly" value="Lychee jelly">
@@ -36,7 +37,7 @@ require_once "config.php";
             echo '<p class="itemname">' . $item['item_name'] . "</p>";
         }
         $itemname = $item['item_name'];
-        echo"<button type='button' id='topping' class='button' onClick='topping()'>Order</button><br><br>";
+        echo"<button type='button' id='{$item['item_name']}' class='button' onClick='topping(this.id)'>Order</button><br><br>";
         echo"</div>";
         // echo "<div id='toppingpage' class='hide'>";
         // echo "<h1>Toppings</h1>";
@@ -51,8 +52,9 @@ require_once "config.php";
     ?> 
     <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
     <script>
-    function topping(){
+    function topping(name){
         $(".hide").removeClass("hide").addClass("see");
+        document.getElementById("itemname").innerHTML = name;
     }
     function exit(){
         $(".see").removeClass("see").addClass("hide");
