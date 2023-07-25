@@ -8,7 +8,9 @@
     <form action="checkout.php" method="post">
 =          <div id = "cart">
             <br><br>
+           
             <button type='button' id='checkout' class='button' onClick='navigateToCheckout()'>Buy</button><br>
+            <button type='button' id='logout' class='button' onClick='navigateToItemPage()'>Back to Items</button> <button type='button' id='checkout' class='button' onClick='navigateToCheckout()'>Buy</button><br>
             <button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>
             <br><br>
           </div>
@@ -19,6 +21,9 @@
      }
     function navigateToHomePage() {
             window.location.href = 'homepage.php';
+     }
+     function navigateToItemPage() {
+            window.location.href = 'itemsinstore.php';
      }
     </script>
 </body>

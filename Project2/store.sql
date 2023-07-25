@@ -42,7 +42,7 @@ VALUES
   (1, 5, 'smoothie', 'Chocolate smoothie', 'chocolate.jpg'),
   (1, 5, 'smoothie', 'Mango smoothie', 'mango.jpg');
 
-  
+
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `shop_id` int,
