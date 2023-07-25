@@ -47,7 +47,8 @@ require_once "config.php";
             echo '<p class="itemname">' . $item['item_name'] . " - $" . $item['price'] . "</p>";
         }
         $itemname = $item['item_name'];
-        echo"<button type='button' id='{$item['id']}. {$item['item_name']}' class='button' onClick='topping(this.id)'>Order</button><br><br>";
+        $item_category = $item['category'];
+        echo"<button type='button' id='{$item['id']}. {$item['item_name']}' class='button' onClick='topping(this.id, this.category)'>Order</button><br><br>";
         echo"</div>";
         // echo "<div id='toppingpage' class='hide'>";
         // echo "<h1>Toppings</h1>";
@@ -62,12 +63,21 @@ require_once "config.php";
     ?> 
     <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button>
     <script>
-    function topping(name){
-        $(".hide").removeClass("hide").addClass("see");
+    function topping(name, category){
+        //alert("name=" + name+ " category="+ category);
+        //$(".hide").removeClass("hide").addClass("see");
         document.getElementById("itemname").innerHTML = name;
+        document.getElementById("item_category").innerHTML = category;
         itemname = name;
-        namesplit = name.split(".");
-        itemid= namesplit[0];
+        item_category = category;
+        if(item_category.equals("boba")){
+            $(".hide").removeClass("hide").addClass("see");
+            namesplit = name.split(".");
+            itemid= namesplit[0];
+        }else{
+            addToCart();
+        }
+    
     }
     function exit(){
         $(".see").removeClass("see").addClass("hide");
