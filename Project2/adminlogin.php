@@ -20,7 +20,11 @@
               <input type="submit" value="Log In">
       </form>
       <?php
-      
+       <?php
+       if (isset($_SESSION['admin'])) {
+         header("Location: adminstore.php");
+       }
+    ?>
       ?>
     </div>
   </body>
