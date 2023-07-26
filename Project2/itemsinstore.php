@@ -17,7 +17,6 @@ require_once "config.php";
         $sth1->bindValue(':username', $_POST['username']);
         $sth1->execute();
         $hash = $sth1->fetch();
-        //$userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
         if(isset($hash["password"])){
             $passwordhash = $hash["password"];
         }
