@@ -136,6 +136,7 @@ table{
     margin: none;
     padding: 10px;
     border: 2px solid #926E6F;
+    text-align: center;
 }
 
 .adminbutton {
@@ -145,24 +146,19 @@ table{
 }
 
 #editbuttons {
-    display: inline;
+    display: table;
+    text-align: center;
     /* margin-left: auto;
     margin-right: auto; */
-    margin: 0;
-    position: relative;
-    left: 50%;
-    right: 50%;
+    margin: auto;
+    /* position: relative; */
+    /* left: 50%;
+    right: 50%; */
     margin-top: 30px;
     margin-bottom: 30px;
     height: 30px;
     width: 30px;
 }
-/* .title{
-    color: #926E6F;
-    padding: 0px 20px;
-    text-align: center;
-    display: inline-block;
-} */
 #logoutbutton {
     display: block;
     margin-left: 47%;
@@ -177,4 +173,15 @@ table{
 }
 #logoutbutton:visited {
     color:rgb(97, 84, 84);
+}
+#save {
+    height: 30px;
+    width: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+input[type=text] {
+    text-align: center;
 }

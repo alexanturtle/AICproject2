@@ -13,7 +13,7 @@
     <h1 class="title">Store (Admin)</h1>
     <?php
       try {
-        if (isset($_POST['password'])&& isset($_POST['username'])) {
+        if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
@@ -27,7 +27,7 @@
             }
             $password = $_POST['password'];
         }
-       else if(!isset($_SESSION['admin'])){
+        else if(!isset($_SESSION['admin'])){
           header("Location: adminlogin.php");
         }
         if (isset($_SESSION['admin'])) {
@@ -47,26 +47,30 @@
         $sth2->execute();
         $items = $sth2->fetchAll();
 
-        $num = 0;
-        echo "<table id='adminedittable'>";
-        echo "<th>Item Number</th>";
-        echo "<th>Item Name</th>";
-        echo "<th>Item Price</th>";
-        foreach ($items as $item) {
-          echo "<tr id='item".$item['id']."'>";
-          echo "<td>". $item['id'] . "</td>";
-          //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
-          echo "<td><input type='text' id='" . $item['id'] . "." . $item['item_name'] . "' name='" . $item['id'] . "." . $item['item_name'] . "' value='" .  $item['item_name'] ."'></td>";
-          echo "<td><input type='text' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
-        //   echo "<td>".$item['item_name']."</td>";
-        //   echo "<td>"."$".$item['price'].""."</td>";
-        //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
-          echo "</tr>";
-            if($item['id'] > $num){
-                $num = $item['id'];
+        echo "<form action='editsaved.php' method='get'>";
+            $num = 0;
+            echo "<table id='adminedittable'>";
+            echo "<th>Item Number</th>";
+            echo "<th>Item Name</th>";
+            echo "<th>Item Price</th>";
+            foreach ($items as $item) {
+            echo "<tr id='item".$item['id']."'>";
+            echo "<td>". $item['id'] . "</td>";
+            //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
+            echo "<td><input type='text' id='" . $item['id'] . "." . $item['item_name'] . "' name='" . $item['id'] . "." . $item['item_name'] . "' value='" .  $item['item_name'] ."'></td>";
+            echo "<td><input type='text' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
+            //   echo "<td>".$item['item_name']."</td>";
+            //   echo "<td>"."$".$item['price'].""."</td>";
+            //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
+            echo "</tr>";
+                if($item['id'] > $num){
+                    $num = $item['id'];
+                }
             }
-        }
-        echo "</table>";
+            echo "</table>";
+            echo "<input id='save' type='submit' value='Save'>";
+        echo "</form>";
+
         echo "<div id='editbuttons'>";
         echo "<button id='{$num}' onClick='add(this.id)' type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
         echo "<button onClick='trash()' type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button>";
