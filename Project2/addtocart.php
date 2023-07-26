@@ -61,7 +61,7 @@ session_start();
         }
         }
     }
-    catch (PDOException $e) {
+}catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
       header("Location: itemsinstore.php");
     }
