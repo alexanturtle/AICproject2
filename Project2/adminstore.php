@@ -51,7 +51,7 @@
         }
         echo "</table>";
         echo "<div id='add-button'>";
-        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='hide()' /></button>";
+        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='add()' /></button>";
         echo "</div>";
     ?>
 
@@ -116,7 +116,7 @@
           else {
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
                 $_SESSION['admin'] = $_POST['username'];
-                header("Location: adminstore.php");
+                //header("Location: adminstore.php");
             }
             else {
                 header("Location: adminlogin.php");
@@ -127,5 +127,11 @@
           echo "<p>Error connecting to database!</p>";
         }
       ?>
+
+<script>
+    function add(){
+        document.getElementById("adminedittable").innerHTML += "<input type='text' id='test' name='test' value='test'><input type='text' id='test2' name='test2' value='test2'><br>";
+    }
+    </script>
 </body>
 </html>
