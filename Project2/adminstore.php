@@ -35,10 +35,11 @@
 
     <?php
         if (password_verify($password, $passwordhash)) {
-            echo "password correct";
+            //echo "password correct";
         }
         else {
-            echo "password incorrect";
+            //echo "password incorrect";
+            header("Location: adminlogin.php");
         }
 
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);

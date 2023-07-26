@@ -30,6 +30,14 @@ require_once "config.php";
     }
 
     if(isset($_SESSION['customer'])) {
+
+        if (password_verify($password, $passwordhash)) {
+            //echo "password correct";
+        }
+        else {
+            //echo "password incorrect";
+            header("Location: customerlogin.php");
+        }
 ?>
 <div id="toppingpage" class="hide">
         <h1 id="itemname">Item Name</h1>
