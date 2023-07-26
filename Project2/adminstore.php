@@ -38,7 +38,7 @@
             //echo "password correct";
         }
         else {
-            //echo "password incorrect";
+            //echo password incorrect";
             header("Location: adminlogin.php");
         }
 
