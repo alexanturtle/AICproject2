@@ -4,7 +4,7 @@ require_once "config.php";
 ?>
 <html>
 <head>
-    <title>Items</title>
+    <title>Store</title>
     <link rel="stylesheet" href="items.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
