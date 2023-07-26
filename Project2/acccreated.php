@@ -32,16 +32,19 @@ session_start();
             $sth->execute();
             echo "<p>Customer added!</p><br>";
             echo "<a href='homepage.php'>Log In</a>";
-            echo "<img id = 'im' src='bob.png' alt='boba'><br>";
+            echo "<img id = 'image' src='bob.png' alt='boba'><br>";
           }
           else{
             echo "<p>This username already exists ya dumbo</p><br>";
             echo "<a href='newcustomer.php'>Back</a>";
+            echo "<img id = 'image' src='damn.gif' alt='boba'><br>";
+
           }
         }
         else{
           echo "<p>Invalid username or password<p><br>";
           echo "<a href='newcustomer.php'>Back</a>";
+          echo "<img id = 'image' src='bob.png' alt='boba'><br>";
         }
         }catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
