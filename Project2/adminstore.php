@@ -22,12 +22,12 @@
             if(isset($hash["password"])){
                 $passwordhash = $hash["password"];
             }
-            else{
+            else if(!isset($_SESSION['admin'])){
                 header("Location: adminlogin.php");
             }
             $password = $_POST['password'];
         }
-       else{
+       else if(!isset($_SESSION['admin'])){
           header("Location: adminlogin.php");
         }
         if (isset($_SESSION['admin'])) {

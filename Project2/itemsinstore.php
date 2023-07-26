@@ -11,7 +11,7 @@ require_once "config.php";
 <body>
 <?php
     try {
-    if (isset($_POST['password'])&& isset($_POST['username'])) {
+    if (isset($_POST['password']) && isset($_POST['username'])) {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
         $sth1->bindValue(':username', $_POST['username']);
@@ -20,15 +20,16 @@ require_once "config.php";
         if(isset($hash["password"])){
             $passwordhash = $hash["password"];
         }
-        else{
+        else if(!isset($_SESSION['customer'])){
             header("Location: customerlogin.php");
         }
         $password = $_POST['password'];
     }
-    else{
+    else if(!isset($_SESSION['customer'])){
         header("Location: customerlogin.php");
     }
-    if (isset($_SESSION['customer'])) {
+
+    if(isset($_SESSION['customer'])) {
 ?>
 <div id="toppingpage" class="hide">
         <h1 id="itemname">Item Name</h1>
@@ -120,7 +121,7 @@ require_once "config.php";
         else {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
             $_SESSION['customer'] = $_POST['username'];
-            header("Location: itemsinstore.php");
+            //header("Location: itemsinstore.php");
         }
         else {
             header("Location: customerlogin.php");
