@@ -60,6 +60,7 @@ require_once "config.php";
         // echo "<button type='button' id='back' class='button' onClick='exit()'>Exit</button>";
         // echo "<button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>";
         // echo "</div>";
+        echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
     }
     echo "</div>";
     ?> 
@@ -82,14 +83,15 @@ require_once "config.php";
     function exit(){
         $(".see").removeClass("see").addClass("hide");
     }
-
     function addToCart() {
         alert("Added to cart!");
         window.location.href = 'addtocart.php?id=' + itemid;
     }
-
     function navigateToCart(){
         window.location.href = 'cart.php';
+    }
+    function navigateToHomePage(){
+        window.location.href = 'homepage.php';
     }
     </script>
 </body>
