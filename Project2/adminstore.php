@@ -34,7 +34,7 @@
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
         $items = $sth2->fetchAll();
-
+        echo  "<form method='post'>";
         echo "<table id='adminedittable'>";
         foreach ($items as $item) {
           echo "<tr id='item".$item['id']."'>";
@@ -48,6 +48,7 @@
         echo "<div id='add-button'>";
         echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='hide()' /></button>";
         echo "</div>";
+        echo "</form>";
     ?>
 
     <!-- <div id="toppingpage" class="hide">
