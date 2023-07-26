@@ -68,8 +68,8 @@ INSERT INTO `customer`
     (`user_name`, `password`)
 VALUES
      ('blablab','$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
-      ('yayay', 'password'),
-     ('coolcool', 'password');
+      ('yayay', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
+     ('coolcool', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe');
 
 CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,
