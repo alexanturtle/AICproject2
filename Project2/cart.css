@@ -30,10 +30,10 @@ table{
      display: block;
  }
  .button {
-    background-color: #DBE9B7;
+    background-color: #b2b498;
     border-radius: 10px;
-    border: 2px solid #5B6D5B;
-    color: #5B6D5B;
+    border: none;
+    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -49,9 +49,12 @@ table{
   p{
     text-align: center;
     font-size: 30px;
+    color: #35251A;
   }
   img{
     align-items: center;
+    border-radius: 10px;
+    border: 3px solid #5B6D5B;
   }
 
   #image{

@@ -116,7 +116,7 @@
           else {
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
                 $_SESSION['admin'] = $_POST['username'];
-                //header("Location: adminstore.php");
+                header("Location: adminstore.php");
             }
             else {
                 header("Location: adminlogin.php");
