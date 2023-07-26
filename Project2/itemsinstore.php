@@ -104,11 +104,8 @@ require_once "config.php";
     function exit(){
         $(".see").removeClass("see").addClass("hide");
     }
-    function customAlert(message) {
-            alert(message);
-        }
     function addToCart() {
-        customAlert("Added");
+        confirm("Added")        
         window.location.href = 'addtocart.php?id=' + itemid;
     }
     function navigateToCart(){
