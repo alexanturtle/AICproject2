@@ -17,9 +17,9 @@ h1 {
     color: #926E6F;
     padding: 0px 20px;
     margin-left: 20px;
-    margin-right: 84%;
+    /* margin-right: 84%; */
     text-align: center;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 #cart-button {
@@ -153,9 +153,23 @@ table{
     height: 30px;
     width: 30px;
 }
-.title{
+/* .title{
     color: #926E6F;
     padding: 0px 20px;
     text-align: center;
     display: inline-block;
+} */
+#logoutbutton {
+    display: block;
+    margin-left: 47%;
+    margin-right: 47%;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #DBE9B7;
+    color:rgb(97, 84, 84);
+    border-radius: 10px;
+}
+#logoutbutton:visited {
+    color:rgb(97, 84, 84);
 }

@@ -24,8 +24,8 @@
             }
             else if(!isset($_SESSION['admin'])){
                 header("Location: adminlogin.php");
+                $password = $_POST['password'];
             }
-            $password = $_POST['password'];
         }
        else if(!isset($_SESSION['admin'])){
           header("Location: adminlogin.php");
@@ -46,7 +46,6 @@
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
         $items = $sth2->fetchAll();
-        echo  "<form method='post'>";
         echo "<table id='adminedittable'>";
         foreach ($items as $item) {
           echo "<tr id='item".$item['id']."'>";
@@ -60,9 +59,8 @@
         echo "<div id='add-button'>";
         echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='add()' /></button>";
         echo "</div>";
-        echo "</form>";
     ?>
-
+    <a id="logoutbutton" href="logout.php">Logout</a>
     <?php
         }
         else {
