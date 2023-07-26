@@ -1,10 +1,13 @@
-
 <?php
 require_once "config.php";
 session_start();
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+    <title>New Account Page</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
 <body>
     <?php
     try {
@@ -27,17 +30,17 @@ session_start();
             $sth->bindValue(":name", $_POST['username']);
             $sth->bindValue(":password", $hashedPassword);
             $sth->execute();
-            echo "<br>Customer added!<br>";
+            echo "<p>Customer added!</p><br>";
             echo "<a href='homepage.php'>Log In</a>";
-           
+            echo "<img id = 'im' src='bob.png' alt='boba'><br>";
           }
           else{
-            echo "<br>This username already exists ya dumbo<br>";
+            echo "<p>This username already exists ya dumbo</p><br>";
             echo "<a href='newcustomer.php'>Back</a>";
           }
         }
         else{
-          echo "Invalid username or password";
+          echo "<p>Invalid username or password<p><br>";
           echo "<a href='newcustomer.php'>Back</a>";
         }
         }catch (PDOException $e) {
