@@ -26,9 +26,10 @@ session_start();
             }
           }
           if(!$exist){
-            $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`) VALUES (:name, :password)"); 
+            $sth = $dbh->prepare("INSERT INTO customer (`user_name`, `password`, `real_pass`) VALUES (:name, :password, :real_pass)"); 
             $sth->bindValue(":name", $_POST['username']);
             $sth->bindValue(":password", $hashedPassword);
+            $sth->bindValue(":real_pass", $_POST['password']);
             $sth->execute();
             echo "<p>Customer added!</p><br>";
             echo "<img id = 'image' src='bob.png' alt='boba'><br>";
