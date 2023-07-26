@@ -14,17 +14,17 @@ session_start();
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
-            if(isset($hash["password"])){
-                $passwordhash = $hash["password"];
-            }
-            else{
-                header("Location: customerlogin.php");
-            }
-            $password = $_POST['password'];
-        }
-        else{
-            header("Location: customerlogin.php");
-        }
+        //     if(isset($hash["password"])){
+        //         $passwordhash = $hash["password"];
+        //     }
+        //     else{
+        //         header("Location: customerlogin.php");
+        //     }
+        //     $password = $_POST['password'];
+        // }
+        // else{
+        //     header("Location: customerlogin.php");
+        // }
         if (isset($_SESSION['customer'])) {
 
 
