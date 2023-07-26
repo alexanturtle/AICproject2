@@ -8,12 +8,12 @@ session_start();
 <body>
     <?php
     try {
-        if (isset($_POST['password'])&& isset($_POST['username'])) {
-            $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-            $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
-            $sth1->bindValue(':username', $_POST['username']);
-            $sth1->execute();
-            $hash = $sth1->fetch();
+        // if (isset($_POST['password'])&& isset($_POST['username'])) {
+        //     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+        //     $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
+        //     $sth1->bindValue(':username', $_POST['username']);
+        //     $sth1->execute();
+        //     $hash = $sth1->fetch();
         //     if(isset($hash["password"])){
         //         $passwordhash = $hash["password"];
         //     }
@@ -51,19 +51,19 @@ session_start();
 
             
         }
-        else {
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
-            $_SESSION['customer'] = $_POST['username'];
-            header("Location: addtocart.php");
-        }
+        // else {
+        // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
+        //     $_SESSION['customer'] = $_POST['username'];
+        //     header("Location: addtocart.php");
+        // }
         else {
             header("Location: customerlogin.php");
         }
-        }
+        // }
     }
-}catch (PDOException $e) {
+    catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
-      header("Location: itemsinstore.php");
+    //   header("Location: itemsinstore.php");
     }
 ?>
 </body>
