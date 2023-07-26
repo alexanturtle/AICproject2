@@ -48,28 +48,30 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `shop_id` int,
   `user_name` varchar(15),
   `password` varchar(64),
+  `real_pass` varchar(20),
   PRIMARY KEY (`id`)
 );
 INSERT INTO `admin` 
-    (`shop_id`, `user_name`, `password`)
+    (`shop_id`, `user_name`, `password`, `real_pass`)
 VALUES
-     (1, 'zoya', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq'),
-      (2, 'richard','$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq'),
-     (3, 'riti', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq');
+     (1, 'zoya', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq', 'password'),
+      (2, 'richard','$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq', 'password'),
+     (3, 'riti', '$2y$10$LnsE6om1IAEsACUZsWnOC.PEMlcIGDNUiMGBMlCqbb.7SzvpKx4lq', 'password');
 
 
 CREATE TABLE IF NOT EXISTS `customer` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_name` varchar(15),
   `password` varchar(64),
+  `real_pass` varchar(20),
   PRIMARY KEY (`id`)
 );
 INSERT INTO `customer` 
-    (`user_name`, `password`)
+    (`user_name`, `password`, `real_pass`)
 VALUES
-     ('blablab','$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
-      ('yayay', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe'),
-     ('coolcool', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe');
+     ('blablab','$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe', 'password'),
+      ('yayay', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe', 'password'),
+     ('coolcool', '$2y$10$wevI/TfHziZxV5yium92be.RVrWjNRWnRAkN5XT9lzeM1yG4NS9fe', 'password');
 
 CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,

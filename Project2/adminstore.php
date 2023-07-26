@@ -13,6 +13,8 @@
     <h1 class="title">Store (Admin)</h1>
     <?php
       try {
+        // password_hash("meme", PASSWORD_DEFAULT);
+
         if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
