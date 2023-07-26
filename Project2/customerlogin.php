@@ -5,6 +5,11 @@
       <link rel="stylesheet" href="login.css">
   </head>
   <body>
+     <?php
+        if (isset($_SESSION['customer'])) {
+          header("Location: itemsinstore.php");
+        }
+     ?>
      <div class="inputbox">
       <h1>Customer Login</h1>
       <form  id="myForm" action="itemsinstore.php" method="post">
@@ -21,11 +26,6 @@
            
       </form>
      </div>
-     <?php
-        if (isset($_SESSION['customer'])) {
-          header("Location: itemsinstore.php");
-        }
-     ?>
      <!-- <script>
     document.getElementById("myForm").addEventListener("submit", function(event) {
       event.preventDefault(); 

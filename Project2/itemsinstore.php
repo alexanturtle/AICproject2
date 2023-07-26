@@ -11,6 +11,13 @@ require_once "config.php";
 <body>
 <?php
     try {
+    // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    // $sth0 = $dbh->prepare("SELECT real_pass FROM customer WHERE :username = user_name");
+    // $sth0->bindValue(':username', $_POST['username']);
+    // $sth0->execute();
+    // $realpass = $sth0->fetch();
+    // password_hash($realpass['real_pass'], PASSWORD_DEFAULT);
+
     if (isset($_POST['password']) && isset($_POST['username'])) {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
@@ -28,16 +35,16 @@ require_once "config.php";
     else if(!isset($_SESSION['customer'])){
         header("Location: customerlogin.php");
     }
-
     if(isset($_SESSION['customer'])) {
 
-        if (password_verify($password, $passwordhash)) {
-            //echo "password correct";
-        }
-        else {
-            //echo "password incorrect";
-            header("Location: customerlogin.php");
-        }
+        // //debug
+        // if (password_verify($password, $passwordhash)) {
+        //     echo "password correct";
+        // }
+        // else {
+        //     echo "password incorrect";
+        //     // header("Location: customerlogin.php");
+        // }
 ?>
 <div id="toppingpage" class="hide">
         <h1 id="itemname">Item Name</h1>
@@ -92,7 +99,7 @@ require_once "config.php";
         // echo "</div>";
     }
     echo "</div>";
-    echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
+    // echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
     ?> 
     <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
@@ -128,9 +135,11 @@ require_once "config.php";
 <?php
         }
         else {
+        // echo "session not set";
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
             $_SESSION['customer'] = $_POST['username'];
-            //header("Location: itemsinstore.php");
+            // echo "password correct, username set, session set";
+            header("Location: itemsinstore.php");
         }
         else {
             header("Location: customerlogin.php");
@@ -141,5 +150,6 @@ require_once "config.php";
         echo "<p>Error connecting to database!</p>";
     }
 ?>
+<a id="logoutbutton" href="logout.php">Logout</a>
 </body>
 </html>
