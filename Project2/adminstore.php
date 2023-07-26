@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Store (Admin)</h1>
+    <h1 class="title">Store (Admin)</h1>
     <?php
       try {
         if (isset($_POST['password'])&& isset($_POST['username'])) {
