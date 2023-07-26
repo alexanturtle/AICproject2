@@ -19,7 +19,6 @@
             $sth1->bindValue(':username', $_POST['username']);
             $sth1->execute();
             $hash = $sth1->fetch();
-            //$userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
             if(isset($hash["password"])){
                 $passwordhash = $hash["password"];
             }
@@ -35,6 +34,13 @@
     ?>
 
     <?php
+        if (password_verify($password, $passwordhash)) {
+            echo "password correct";
+        }
+        else {
+            echo "password incorrect";
+        }
+
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
@@ -61,7 +67,7 @@
         else {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
             $_SESSION['admin'] = $_POST['username'];
-            //header("Location: adminstore.php");
+            header("Location: adminstore.php");
         }
         else {
             header("Location: adminlogin.php");

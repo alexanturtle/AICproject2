@@ -23,7 +23,7 @@
      </div>
      <?php
         if (isset($_SESSION['customer'])) {
-          header("Location: customerstore.php");
+          header("Location: itemsinstore.php");
         }
      ?>
      <!-- <script>
