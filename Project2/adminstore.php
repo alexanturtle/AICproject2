@@ -46,34 +46,46 @@
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
         $items = $sth2->fetchAll();
+
+        $num = 0;
         echo "<table id='adminedittable'>";
         echo "<th>Item Number</th>";
         echo "<th>Item Name</th>";
         echo "<th>Item Price</th>";
         foreach ($items as $item) {
           echo "<tr id='item".$item['id']."'>";
-          echo "<td>".$item['id']."</td>";
-          echo "<td>".$item['item_name']."</td>";
-          echo "<td>"."$".$item['price'].""."</td>";
+          echo "<td>". $item['id'] . "</td>";
+          //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
+          echo "<td><input type='text' id='" . $item['id'] . "." . $item['item_name'] . "' name='" . $item['id'] . "." . $item['item_name'] . "' value='" .  $item['item_name'] ."'></td>";
+          echo "<td><input type='text' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
+        //   echo "<td>".$item['item_name']."</td>";
+        //   echo "<td>"."$".$item['price'].""."</td>";
         //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
           echo "</tr>";
+            if($item['id'] > $num){
+                $num = $item['id'];
+            }
         }
         echo "</table>";
         echo "<div id='editbuttons'>";
-        echo "<button onClick='add()' type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
+        echo "<button id='{$num}' onClick='add(this.id)' type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
         echo "<button onClick='trash()' type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button>";
         echo "</div>";
     ?>
     <script>
-        function add() {
+        value = 0;
+        function add(id) {
+            id = parseInt(id);
+            value++;
+            id = id + value;
             var table = document.getElementById("adminedittable");
-            var row = table.insertRow(17);
+            var row = table.insertRow(id);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
-            cell1.innerHTML = "Item ID";
-            cell2.innerHTML = "Item Name";
-            cell3.innerHTML = "Price";
+            cell1.innerHTML = id;
+            cell2.innerHTML = "<input type='text' id='name" + id + "' name='" + id + "' value='Name'>";
+            cell3.innerHTML = "<input type='text' id='price" + id + "' name='" + id + "' value='Price'>";
         }
 
         function trash() {
