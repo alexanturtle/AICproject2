@@ -1,6 +1,8 @@
 body {
+  background-image: url("p2-bg.jpg");
     background-color: #f6e7e4;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FDFDF6;
 }
 
 td{
@@ -11,28 +13,37 @@ th{
     font-size: 35px;
 }
 h1{
+  color: #35251A;
     text-align: center;
     font-size: 45px;
+    margin-bottom: 70px;
 }
     
 table{
+  border: 2px solid #643843;
+  padding: 20px;
+  background-color: #926E6F75;
+  border-radius: 10px;
      width: fit-content;
     margin-left: auto;
     margin-right: auto;
      display: block;
  }
  .button {
-    background-color: lightpink;
-    border: white;
-    color: white;
+    background-color: #DBE9B7;
+    border-radius: 10px;
+    border: 2px solid #5B6D5B;
+    color: #5B6D5B;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
-     display: block;
+    display: block;
   }
 
   p{
