@@ -82,8 +82,8 @@ require_once "config.php";
         // echo "<button type='button' id='cart' class='button' onClick='navigateToCart()'>Exit</button>";
         // echo "</div>";
     }
-    echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
     echo "</div>";
+    echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
     ?> 
     <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
