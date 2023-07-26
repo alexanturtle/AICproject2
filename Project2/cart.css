@@ -11,6 +11,7 @@ td{
 }
 th{
     font-size: 35px;
+    color: #643843;
 }
 h1{
   color: #35251A;
@@ -22,7 +23,7 @@ h1{
 table{
   border: 2px solid #643843;
   padding: 20px;
-  background-color: #926E6F75;
+  background-color: #926e6fb7;
   border-radius: 10px;
      width: fit-content;
     margin-left: auto;
@@ -65,3 +66,18 @@ table{
   a{
     text-align: center;
   }
+  .logoutbutton {
+    display: block;
+    margin-left: 47%;
+    margin-right: 47%;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #DBE9B7;
+    color:rgb(97, 84, 84);
+    border-radius: 10px;
+}
+.logoutbutton:visited {
+    color:rgb(97, 84, 84);
+}
