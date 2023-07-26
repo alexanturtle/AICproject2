@@ -24,8 +24,8 @@
             }
             else if(!isset($_SESSION['admin'])){
                 header("Location: adminlogin.php");
+                $password = $_POST['password'];
             }
-            $password = $_POST['password'];
         }
        else if(!isset($_SESSION['admin'])){
           header("Location: adminlogin.php");
@@ -61,7 +61,7 @@
         echo "</div>";
         echo "</form>";
     ?>
-
+    <a id="logoutbutton" href="logout.php">Logout</a>
     <?php
         }
         else {

@@ -19,6 +19,5 @@ if (ini_get("session.use_cookies")) {
 // Finally, destroy the session.
 session_destroy();
 
-echo "<p>Logged out!</p>";
-echo "<a href='homepage.php'>Return to home page</a>";
+header("Location: homepage.php");
 ?>
