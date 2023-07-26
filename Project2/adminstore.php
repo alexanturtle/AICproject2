@@ -13,7 +13,12 @@
     <h1 class="title">Store (Admin)</h1>
     <?php
       try {
-        // password_hash("meme", PASSWORD_DEFAULT);
+        // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+        // $sth0 = $dbh->prepare("SELECT real_pass FROM admin WHERE :username = user_name");
+        // $sth0->bindValue(':username', $_POST['username']);
+        // $sth0->execute();
+        // $realpass = $sth0->fetch();
+        // password_hash($realpass['real_pass'], PASSWORD_DEFAULT);
 
         if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -36,13 +41,13 @@
     ?>
 
     <?php
-        if (password_verify($password, $passwordhash)) {
-            //echo "password correct";
-        }
-        else {
-            //echo password incorrect";
-            header("Location: adminlogin.php");
-        }
+        // if (password_verify($password, $passwordhash)) {
+        //     //echo "password correct";
+        // }
+        // else {
+        //     //echo password incorrect";
+        //     header("Location: adminlogin.php");
+        // }
 
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth2 = $dbh->prepare("SELECT * FROM items");
