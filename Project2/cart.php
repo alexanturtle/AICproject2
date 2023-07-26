@@ -27,7 +27,7 @@ require_once "config.php";
               echo "</tr>";
             }
             echo "</table>";
-        }    
+        }  
     catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
     }

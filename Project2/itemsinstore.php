@@ -106,8 +106,9 @@ require_once "config.php";
         $(".see").removeClass("see").addClass("hide");
     }
     function addToCart() {
-        alert("Added to cart!");
-        window.location.href = 'addtocart.php?id=' + itemid;
+        if (confirm("Added")) {
+            window.location.href = 'addtocart.php?id=' + itemid;
+        } 
     }
     function navigateToCart(){
         window.location.href = 'cart.php';
