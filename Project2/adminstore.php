@@ -46,22 +46,40 @@
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
         $items = $sth2->fetchAll();
-        echo  "<form method='post'>";
         echo "<table id='adminedittable'>";
+        echo "<th>Item Number</th>";
+        echo "<th>Item Name</th>";
+        echo "<th>Item Price</th>";
         foreach ($items as $item) {
           echo "<tr id='item".$item['id']."'>";
+          echo "<td>".$item['id']."</td>";
           echo "<td>".$item['item_name']."</td>";
           echo "<td>"."$".$item['price'].""."</td>";
-          echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
-          echo "<td><button type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' onClick='trash()' /></button></td>";
+        //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
           echo "</tr>";
         }
         echo "</table>";
-        echo "<div id='add-button'>";
-        echo "<button type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' onClick='add()' /></button>";
+        echo "<div id='editbuttons'>";
+        echo "<button onClick='add()' type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
+        echo "<button onClick='trash()' type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button>";
         echo "</div>";
-        echo "</form>";
     ?>
+    <script>
+        function add() {
+            var table = document.getElementById("adminedittable");
+            var row = table.insertRow(17);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = "Item ID";
+            cell2.innerHTML = "Item Name";
+            cell3.innerHTML = "Price";
+        }
+
+        function trash() {
+            document.getElementById("adminedittable").deleteRow(17);
+        }
+    </script>
 
     <?php
         }
@@ -79,11 +97,11 @@
         echo "<p>Error connecting to database!</p>";
     }
     ?>
-<a href="logout.php">Logout</a>
-<script>
+<a id="logoutbutton" href="logout.php">Logout</a>
+<!-- <script>
     function add(){
         document.getElementById("adminedittable").innerHTML += "<input type='text' id='test' name='test' value='test'><input type='text' id='test2' name='test2' value='test2'><br>";
     }
-    </script>
+    </script> -->
 </body>
 </html>
