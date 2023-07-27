@@ -19,11 +19,12 @@ require_once "config.php";
                 $user->bindValue(':user', $_SESSION['customer']);
                 $user->execute();
                 $id= $user->fetch();
-
-                $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id WHERE `customer_id` = :id AND `bought` = 'False'"); 
+                if(isset($id['id'])){
+                  $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id WHERE `customer_id` = :id AND `bought` = 'False'"); 
                 $sth->bindValue(':id', $id['id']);
                 $sth->execute();
                 $items= $sth->fetchAll();
+                }
                 //var_dump($items);
                 echo "<table>";
                 if(isset($items)){
@@ -46,6 +47,9 @@ require_once "config.php";
               echo "<td>".$item['price']."</td>";
               echo "</tr>";
                 }
+            }
+            else{
+              echo"<td>None</td>";
             }
             echo "</table>";
           }
