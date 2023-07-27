@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-session_start();
+// session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +15,7 @@ session_start();
         //var_dump($_POST);
         // here we check if the username and password values exist
         if(isset($_POST['username']) && isset($_POST['password'])){
+          echo "username and password set";
           // here we create copies of the username and password without spaces 
           $userstring = str_replace(' ', '', $_POST['username']);
           $passwordstring = str_replace(' ', '', $_POST['password']);
@@ -60,7 +61,6 @@ session_start();
           echo "<p>Invalid username or password<p><br>"; //if something the user inputed is invalid
           echo "<img id = 'image' src='bob.png' alt='boba'><br>";
           echo "<a class='logoutbutton' href='newcustomer.php'>Back</a>";
-
         }
     }
     catch (PDOException $e) {
