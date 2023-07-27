@@ -13,7 +13,7 @@ require_once "config.php";
      <?php
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-                $sth = $dbh->prepare("SELECT items.item_name, items.price FROM items INNER JOIN purchased ON items.id=purchased.item_id"); 
+                $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id"); 
                 $sth->execute();
                 $items= $sth->fetchAll();
                 echo "<table>";
@@ -24,6 +24,15 @@ require_once "config.php";
             //  echo "<p>"" ".$item['price']."</p>";
               echo "<td>".$item['item_name']."</td>";
               echo "<td>".$item['price']."</td>";
+              if($item['topping'] == 1){
+                echo "<td>Tapioca Pearls</td>";
+              }
+              elseif($item['topping'] == 2){
+                echo "<td>Lychee Jelly</td>";
+              }
+              elseif($item['topping'] == 3){
+                echo "<td>Cheese Foam</td>";
+              }
               echo "</tr>";
             }
             echo "</table>";

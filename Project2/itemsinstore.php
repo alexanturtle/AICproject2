@@ -52,15 +52,15 @@ require_once "config.php";
         <h2>Toppings</h2>
     <table id="toppingtable">
         <tr>
-        <td><input type="checkbox" id="topping1" name="boba" value="tapioca pearls">
+        <td><input type="radio" id="1" name="boba" value="tapioca pearls"  onClick='addtopping(this.id)'>
         <label for="topping1"> Tapioca Pearls</label><br></td>
 </tr>
 <tr>
-        <td><input type="checkbox" id="topping2" name="jelly" value="Lychee jelly">
+        <td><input type="radio" id="2" name="jelly" value="Lychee jelly"  onClick='addtopping(this.id)'>
         <label for="topping2">Lychee Jelly</label><br></td>
 </tr>
 <tr>
-        <td><input type="checkbox" id="topping3" name="foam" value="Cheese foam">
+        <td><input type="radio" id="3" name="foam" value="Cheese foam"  onClick='addtopping(this.id)'>
         <label for="topping3"> Cheese Foam</label><br></td>
 </tr>
     </table>
@@ -104,6 +104,7 @@ require_once "config.php";
     <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
     function topping(name){
+        toppingid = 1;
         //alert("name=" + name+ " category="+ category);
         itemname = name;
         namesplit = name.split(".");
@@ -121,7 +122,10 @@ require_once "config.php";
         $(".see").removeClass("see").addClass("hide");
     }
     function addToCart() {
-        if (confirm("Added")) {
+        if(toppingid > 0 && toppingid <= 3){
+            window.location.href = 'addtocart.php?id=' + itemid + "&topping=" + toppingid;
+        }
+        else if (confirm("Added")) {
             window.location.href = 'addtocart.php?id=' + itemid;
         } 
     }
@@ -130,6 +134,9 @@ require_once "config.php";
     }
     function navigateToHomePage(){
         window.location.href = 'homepage.php';
+    }
+    function addtopping(id){
+        toppingid = parseInt(id);
     }
     </script>
 <?php

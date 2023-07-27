@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `purchased` (
   `id` int NOT NULL AUTO_INCREMENT,
   `customer_id` int,
   `item_id` int,
+  `topping` int,
   `bought` text,
   PRIMARY KEY (`id`)
 );
