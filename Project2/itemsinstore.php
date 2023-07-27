@@ -104,7 +104,7 @@ require_once "config.php";
     <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
     function topping(name){//lets you add toppings to your item
-        toppingid = 1;
+        toppingid = 0;
         //alert("name=" + name+ " category="+ category);
         itemname = name;
         namesplit = name.split(".");

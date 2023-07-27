@@ -48,6 +48,9 @@ require_once "config.php";
               elseif($item['topping'] == 3){
                 echo "<td>Cheese Foam</td>";
               }
+              else{
+                echo "<td>None</td>"; //if no toppings were chosen, then display none
+              }
               echo "<td>".$item['price']."</td>";
               echo "</tr>";
                 }
