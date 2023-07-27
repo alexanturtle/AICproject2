@@ -80,7 +80,7 @@ require_once "config.php";
     echo "   <a id='history' href='purchase.php'>History</a>";
     echo "</div>";
     echo "<div class='itemset'>";
-    foreach($items as $item){
+    foreach($items as $item){//shows the image, name and price of the items in store from the table
         echo"<div class='item'>";
         if(isset($item['item_image'])){
             echo"<img src='" . $item['item_image'] . "' alt='no image' class='image'>";
@@ -105,7 +105,7 @@ require_once "config.php";
     ?> 
     <!-- <button type='button' id='cart' class='button' onClick='navigateToCart()'>Go to Cart</button> -->
     <script>
-    function topping(name){
+    function topping(name){//lets you add toppings to your item
         toppingid = 1;
         //alert("name=" + name+ " category="+ category);
         itemname = name;
@@ -123,7 +123,7 @@ require_once "config.php";
     function exit(){
         $(".see").removeClass("see").addClass("hide");
     }
-    function addToCart() {
+    function addToCart() {//addes your item and toppings to cart using their id
         if(toppingid > 0 && toppingid <= 3){
             window.location.href = 'addtocart.php?id=' + itemid + "&topping=" + toppingid;
         }
