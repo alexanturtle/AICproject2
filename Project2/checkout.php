@@ -9,8 +9,6 @@ require_once "config.php";
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-<title>Checkout Page</title>
-    <link rel="stylesheet" href="cart.css">
     <h1>You have purchased your items</h1>
     <img id = "image" src="download.png" alt="boba"><br>
     <p>Come back again soon</p><br>
