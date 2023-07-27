@@ -30,7 +30,7 @@ require_once "config.php";
                   echo "<th>Item</th>";
                 echo "<th>Topping</th>";
                 echo "<th>Price</th>";
-                foreach($items as $item){
+                foreach($items as $item){// prints out the ordered items and their prices
                   echo "<tr>";
             //  echo "<p>"" ".$item['price']."</p>";
               echo "<td>".$item['item_name']."</td>";
@@ -67,6 +67,7 @@ require_once "config.php";
           </div>
     </form>
     <script>
+      //Navigates back to certain webpages on button click
     function navigateToCheckout() {
             window.location.href = 'checkout.php';
      }

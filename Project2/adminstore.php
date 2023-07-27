@@ -55,7 +55,7 @@
             echo "<th>Item Number</th>";
             echo "<th>Item Name</th>";
             echo "<th>Item Price</th>";
-            foreach ($items as $item) {
+            foreach ($items as $item) {//creates edit item table in adminstore
             echo "<tr id='item".$item['id']."'>";
             echo "<td>". $item['id'] . "</td>";
             //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
@@ -80,7 +80,7 @@
     ?>
     <script>
         value = 0;
-        function add(id) {
+        function add(id) {//addes items and item price
             id = parseInt(id);
             value++;
             id = id + value;
@@ -94,7 +94,7 @@
             cell3.innerHTML = "<input type='text' id='price" + id + "' name='" + id + "' value='Price'>";
         }
 
-        function trash() {
+        function trash() {// deletes items
             document.getElementById("adminedittable").deleteRow(17);
         }
     </script>
