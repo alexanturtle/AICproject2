@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="homepage.css">
     </head>
     <body>
+        <!-- this it the homepage of the store, where the user can choose where to login or to create a new account -->
         <h1>Boba Store</h1>
         <div id="links">
             <div id="customerlogin">

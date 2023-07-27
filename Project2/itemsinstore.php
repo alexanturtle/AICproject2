@@ -76,7 +76,7 @@ require_once "config.php";
     echo "<div id='header'>";
     echo "<h1>Store</h1>";
     echo "<button type='button'><img class='adminbutton' src='cart-icon.png' alt='cart-button' id='cart-button' onClick='navigateToCart()' /></button>";
-    echo "<a href='purchase.php'>History</a>";
+    echo "   <a id='history' href='purchase.php'>History</a>";
     echo "</div>";
     echo "<div class='itemset'>";
     foreach($items as $item){

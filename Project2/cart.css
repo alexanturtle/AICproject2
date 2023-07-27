@@ -8,6 +8,8 @@ body {
 td{
     text-align: center;
     font-size: 25px;
+    padding: 20px;
+    border: 2px solid #643843;
 }
 th{
     font-size: 35px;
@@ -29,6 +31,7 @@ table{
     margin-left: auto;
     margin-right: auto;
      display: block;
+     border-collapse: collapse;
  }
  .button {
     background-color: #DBE9B7;

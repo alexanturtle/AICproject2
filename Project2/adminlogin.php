@@ -5,6 +5,7 @@
       <link rel="stylesheet" href="login.css">
   </head>
   <body>
+    <!-- this is where admins login -->
     <div class="inputbox">
       <h1>Admin Login</h1>
       <form action="adminstore.php" method="post">
@@ -20,7 +21,7 @@
               <input type="submit" value="Log In">
       </form>
       <?php
-       if (isset($_SESSION['admin'])) {
+       if (isset($_SESSION['admin'])) { //if the admin is already in session, then it takes the admin directly to the store
          header("Location: adminstore.php");
        }
       ?>

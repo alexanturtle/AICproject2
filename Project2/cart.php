@@ -9,6 +9,7 @@ require_once "config.php";
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
+  <!-- this is the cart page, where all items the user added to cart is displayed and can be bought -->
     <h1>Cart</h1>
      <?php
     try {
@@ -23,14 +24,16 @@ require_once "config.php";
                 $sth->bindValue(':id', $id['id']);
                 $sth->execute();
                 $items= $sth->fetchAll();
+                //var_dump($items);
                 echo "<table>";
-                echo "<th>Item</th>";
+                if(isset($items)){
+                  echo "<th>Item</th>";
+                echo "<th>Topping</th>";
                 echo "<th>Price</th>";
                 foreach($items as $item){
                   echo "<tr>";
             //  echo "<p>"" ".$item['price']."</p>";
               echo "<td>".$item['item_name']."</td>";
-              echo "<td>".$item['price']."</td>";
               if($item['topping'] == 1){
                 echo "<td>Tapioca Pearls</td>";
               }
@@ -40,7 +43,9 @@ require_once "config.php";
               elseif($item['topping'] == 3){
                 echo "<td>Cheese Foam</td>";
               }
+              echo "<td>".$item['price']."</td>";
               echo "</tr>";
+                }
             }
             echo "</table>";
           }

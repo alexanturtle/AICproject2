@@ -4,7 +4,7 @@ body {
     background-color: #f6e7e4;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
+/* css for the header */
 #header {
     display: block;
     /* background-color: #DBE9B7; */
@@ -14,7 +14,7 @@ body {
     /* border: solid 2px #E2BCB7; */
     /* border-radius: 20px; */
 }
-
+/* css for all of h1 */
 h1 {
     color: #926E6F;
     padding: 0px 20px;
@@ -23,7 +23,7 @@ h1 {
     text-align: center;
     /* display: inline-block; */
 }
-
+/* css for the cart button */
 #cart-button {
     float: right;
 }
@@ -34,12 +34,12 @@ h1 {
     grid-template-rows: auto auto auto;
     /* margin: 0% 10%; */
 }
-
+/* css for each item's name */
 .itemname {
     text-align: center;
     color: #926E6F;
 }
-
+/* css for all of the images used */
 .image {
     display: block;
     margin-left: auto;
@@ -51,7 +51,7 @@ h1 {
     height: 200px;
     object-fit: cover;
 }
-
+/* css for all buttons used */
 .button {
     background-color:#DBE9B7;
     border: none;
@@ -64,19 +64,19 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
-
+/* css for cart button only */
 #cart {
     padding: 0px;
     height: 50px;
     width: 120px;
 }
-
+/* css for the back button and cart button */
 #back, #cart {
     display: block;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+/* this it the css for the page that shows up when you click order if you're ordering a boba or smoothie */
 #toppingbody {
     background-color: rgba(242, 247, 242, 0.9);
     border-bottom-right-radius: 20px;
@@ -94,7 +94,7 @@ h1 {
     font-size: 20px;
     color: rgb(97, 84, 84);
 }
-
+/* this is the css for the item name that shows up along with the toppings and add to cart*/
 #itemname{
     background-color: rgba(161, 181, 161, 0.9);
     border-top-right-radius: 20px;
@@ -119,6 +119,7 @@ h1 {
 }
 
 /* adminstore */
+/* these are css for the table in admin where all items can be accessed and edited */
 td{
     text-align: left;
 }
@@ -141,7 +142,7 @@ table{
     border: 2px solid #926E6F;
     text-align: center;
 }
-
+/* css for admin page's buttons */
 .adminbutton {
     border: 0px;
     height: 30px;
@@ -177,6 +178,7 @@ table{
 #logoutbutton:visited {
     color:rgb(97, 84, 84);
 }
+/* css for save */
 #save {
     height: 30px;
     width: 60px;
@@ -194,3 +196,17 @@ input[type=text]:focus, input[type=number]:focus {
     text-align: center;
     background: #E2BCB7;
 }
+/* css for the history link */
+#history{
+    color: black;
+    text-decoration: none;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+/* this is so that when you hover over history it indicates something */
+#history:hover {
+    background-color: #c8c1c0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }

@@ -6,34 +6,16 @@ session_start();
 <!DOCTYPE html>
 <html>
 <body>
+    <!-- this is the page where items are added to cart -->
     <?php
     try {
-        // if (isset($_POST['password'])&& isset($_POST['username'])) {
-        //     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        //     $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
-        //     $sth1->bindValue(':username', $_POST['username']);
-        //     $sth1->execute();
-        //     $hash = $sth1->fetch();
-        //     if(isset($hash["password"])){
-        //         $passwordhash = $hash["password"];
-        //     }
-        //     else{
-        //         header("Location: customerlogin.php");
-        //     }
-        //     $password = $_POST['password'];
-        // }
-        // else{
-        //     header("Location: customerlogin.php");
-        // }
         if (isset($_SESSION['customer'])) {
 
 
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             if(isset($_GET['id']) && isset($_SESSION['customer'])){
-                // echo $_SESSION['customer'];
-                // echo $_GET['id'];
-                // echo $_GET['topping'];
                 $itemid = $_GET['id'];
+                // getting the customer id
                 $get = $dbh->prepare("SELECT id FROM customer WHERE user_name = :name"); 
                 $get->bindValue(":name", $_SESSION['customer']);
                 $get->execute();
@@ -41,6 +23,7 @@ session_start();
                 var_dump($user);
                 $userid = $user[0]['id'];
                 //echo $userid;
+                //if there is a topping, then we add the topping
                 if(isset($_GET['topping'])){
                     $toppingid = $_GET['topping'];
                     $sth = $dbh->prepare("INSERT INTO purchased (`customer_id`, `item_id`, `topping`, `bought`) VALUES (:customer, :item, :topping, 'False')"); 
@@ -48,7 +31,7 @@ session_start();
                     $sth->bindValue(":item", $itemid);
                     $sth->bindValue(":topping", $toppingid);
                 }
-                else{
+                else{ //if no topping
                     $sth = $dbh->prepare("INSERT INTO purchased (`customer_id`, `item_id`, `topping`, `bought`) VALUES (:customer, :item, '0', 'False')"); 
                     $sth->bindValue(":customer", $userid);
                     $sth->bindValue(":item", $itemid);
@@ -56,7 +39,7 @@ session_start();
                 $sth->execute();
             echo "<br>Added to cart!<br>";
             echo "<a href='itemsinstore.php'>Back</a>";
-            header("Location: itemsinstore.php");
+            header("Location: itemsinstore.php"); //takes user back to iteminstore immediately
             }
             else{
                 header("Location: itemsinstore.php");
@@ -64,11 +47,6 @@ session_start();
 
             
         }
-        // else {
-        // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
-        //     $_SESSION['customer'] = $_POST['username'];
-        //     header("Location: addtocart.php");
-        // }
         else {
             header("Location: customerlogin.php");
         }

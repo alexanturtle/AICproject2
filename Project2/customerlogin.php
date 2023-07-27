@@ -5,7 +5,9 @@
       <link rel="stylesheet" href="login.css">
   </head>
   <body>
+    <!-- this is where customers login -->
      <?php
+    //  if customer is already in session, then it takes the customer directly to the itemsinstore page
         if (isset($_SESSION['customer'])) {
           header("Location: itemsinstore.php");
         }

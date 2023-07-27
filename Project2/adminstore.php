@@ -10,15 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- this is the admin storefront, which has a table of all the the items in the store -->
     <h1 class="title">Store (Admin)</h1>
     <?php
       try {
-        // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        // $sth0 = $dbh->prepare("SELECT real_pass FROM admin WHERE :username = user_name");
-        // $sth0->bindValue(':username', $_POST['username']);
-        // $sth0->execute();
-        // $realpass = $sth0->fetch();
-        // password_hash($realpass['real_pass'], PASSWORD_DEFAULT);
 
         if (isset($_POST['password']) && isset($_POST['username'])) {
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);

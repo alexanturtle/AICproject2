@@ -9,8 +9,7 @@ require_once "config.php";
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-<title>Checkout Page</title>
-    <link rel="stylesheet" href="cart.css">
+<!-- this it the checkout page, which shows up after you buy items to confirm your purchase -->
     <?php
         try{
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
