@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-session_start();
+// session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +14,7 @@ session_start();
     try {
         //var_dump($_POST);
         if(isset($_POST['username']) && isset($_POST['password'])){
+          echo "username and password set";
           $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
           $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
           $get = $dbh->prepare("SELECT user_name FROM customer"); 
@@ -48,7 +49,6 @@ session_start();
           echo "<p>Invalid username or password<p><br>"; //if something the user inputed is invalid
           echo "<img id = 'image' src='bob.png' alt='boba'><br>";
           echo "<a class='logoutbutton' href='newcustomer.php'>Back</a>";
-
         }
     }
     catch (PDOException $e) {
