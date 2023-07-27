@@ -12,10 +12,10 @@ session_start();
   <!-- this is the page where a new customer account is created -->
     <?php
     try {
-      $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         //var_dump($_POST);
         if(isset($_POST['username']) && isset($_POST['password'])){
+          $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+          $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
           $get = $dbh->prepare("SELECT user_name FROM customer"); 
           $get->execute();
           $users= $get->fetchAll();
@@ -50,7 +50,8 @@ session_start();
           echo "<a class='logoutbutton' href='newcustomer.php'>Back</a>";
 
         }
-        }catch (PDOException $e) {
+    }
+    catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
   }
 ?>
