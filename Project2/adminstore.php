@@ -35,69 +35,85 @@
         if (isset($_SESSION['admin'])) {
     ?>
 
+    <div id="body">
     <?php
-        // if (password_verify($password, $passwordhash)) {
-        //     //echo "password correct";
-        // }
-        // else {
-        //     //echo password incorrect";
-        //     header("Location: adminlogin.php");
-        // }
 
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
         $items = $sth2->fetchAll();
 
-        echo "<form action='editsaved.php' method='post'>";
-            $num = 0;
-            echo "<table id='adminedittable'>";
-            echo "<th>Item Number</th>";
-            echo "<th>Item Name</th>";
-            echo "<th>Item Price</th>";
-            foreach ($items as $item) {//creates edit item table in adminstore
+    ?>
+    <!-- forms for editing, deleting, adding items -->
+        <div id="form">
+        <h2>Edit, Add, or Delete Items in Store: </h2><br>
+
+        <!-- editing -->
+        <h3>Edit an Item</h3>
+        <form action='editsaved.php' method='get'>
+            
+            <label for="editid">Choose an item number to edit: </label>
+            <select name="editid" required>
+            <?php
+            foreach ($items as $item) {
+                echo "<option value=".$item['id'].">".$item['id']."</option>";
+            }
+            ?>
+            </select>
+            <br>
+            <label for="name">New Name: </label>
+            <input type="text" name="name" required><br>
+            <label for="price">New Price: </label>
+            <input type="number" name="price" min="1" required><br>
+
+            <input class='save' type='submit' value='Save'>
+        </form>
+        <br>
+        
+        <!-- adding -->
+        <h3>Add an Item</h3>
+        <form action='addsaved.php' method='get'>
+            <label for="name">Name: </label>
+            <input type="text" name="name" required><br>
+            <label for="price">Price: </label>
+            <input type="number" name="price" min="1" required><br>
+
+            <input class='save' type='submit' value='Add Item'>
+        </form>
+        <br>
+
+        <!-- deleting -->
+        <h3>Delete an Item</h3>
+        <form action='deletesaved.php' method='get'>
+            <label for="deleteid">Choose an item number to delete: </label>
+            <select name="deleteid" required>
+            <?php
+            foreach ($items as $item) {
+                echo "<option value=".$item['id'].">".$item['id']."</option><br>";
+            }
+            echo "<br>";
+            ?>
+            <input class='save' type='submit' value='Delete'>
+        </form>
+        
+        </div>
+
+    <?php
+        // table w item info
+        echo "<table id='adminedittable'>";
+        echo "<th>Item Number</th>";
+        echo "<th>Item Name</th>";
+        echo "<th>Item Price</th>";
+        foreach ($items as $item) {
             echo "<tr id='item".$item['id']."'>";
             echo "<td>". $item['id'] . "</td>";
-            //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
-            echo "<td><input type='text' id='" . $item['id'] . "." . $item['item_name'] . "' name='" . $item['id'] . "." . $item['item_name'] . "' value='" .  $item['item_name'] ."'></td>";
-            echo "<td><input type='number' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
-            //   echo "<td>".$item['item_name']."</td>";
-            //   echo "<td>"."$".$item['price'].""."</td>";
-            //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";
+            echo "<td>".$item['item_name']."</td>";
+            echo "<td>$ ".$item['price']."</td>";
             echo "</tr>";
-                if($item['id'] > $num){
-                    $num = $item['id'];
-                }
-            }
-            echo "</table>";
-            echo "<input id='save' type='submit' value='Save'>";
-        echo "</form>";
-
-        echo "<div id='editbuttons'>";
-        echo "<button id='{$num}' onClick='add(this.id)' type='button'><img class='adminbutton' src='add-icon.png' alt='add-button' /></button>";
-        echo "<button onClick='trash()' type='button'><img src='trash-icon.png' alt='trash-button' class='adminbutton' /></button>";
-        echo "</div>";
+        }
+        echo "</table>";
     ?>
-    <script>
-        value = 0;
-        function add(id) {//addes items and item price
-            id = parseInt(id);
-            value++;
-            id = id + value;
-            var table = document.getElementById("adminedittable");
-            var row = table.insertRow(id);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            cell1.innerHTML = id;
-            cell2.innerHTML = "<input type='text' id='name" + id + "' name='" + id + "' value='Name'>";
-            cell3.innerHTML = "<input type='text' id='price" + id + "' name='" + id + "' value='Price'>";
-        }
-
-        function trash() {// deletes items
-            document.getElementById("adminedittable").deleteRow(17);
-        }
-    </script>
+    </div>
 
     <?php
         }
@@ -116,10 +132,5 @@
     }
     ?>
 <a id="logoutbutton" href="logout.php">Logout</a>
-<!-- <script>
-    function add(){
-        document.getElementById("adminedittable").innerHTML += "<input type='text' id='test' name='test' value='test'><input type='text' id='test2' name='test2' value='test2'><br>";
-    }
-    </script> -->
 </body>
 </html>

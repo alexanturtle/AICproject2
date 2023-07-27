@@ -120,6 +120,14 @@ h1 {
 
 /* adminstore */
 /* these are css for the table in admin where all items can be accessed and edited */
+#body {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* grid-template-rows: auto auto auto; */
+}
+#form {
+    margin-left: 10%;
+}
 td{
     text-align: left;
 }
@@ -129,9 +137,7 @@ table{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    /* border: solid black 2px; */
 }
-
 #adminedittable tr {
     border: 2px solid #926E6F;
 }
@@ -145,21 +151,6 @@ table{
 /* css for admin page's buttons */
 .adminbutton {
     border: 0px;
-    height: 30px;
-    width: 30px;
-}
-
-#editbuttons {
-    display: table;
-    text-align: center;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin: auto;
-    /* position: relative; */
-    /* left: 50%;
-    right: 50%; */
-    margin-top: 30px;
-    margin-bottom: 30px;
     height: 30px;
     width: 30px;
 }
@@ -178,19 +169,29 @@ table{
 #logoutbutton:visited {
     color:rgb(97, 84, 84);
 }
-/* css for save */
-#save {
+
+.save {
     height: 30px;
-    width: 60px;
-    display: block;
+    width: 80px;
+    /* display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     margin-top: 10px;
 }
-input[type=text],input[type=number] {
+/* #editbuttons {
+    display: table;
     text-align: center;
-    border: none;
-    background-color: #f6e7e4;;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 30px;
+} */
+
+input[type=text],input[type=number],option {
+    text-align: center;
+    /* border: none; */
+    /* background-color: #f6e7e4; */
 }
 input[type=text]:focus, input[type=number]:focus {
     text-align: center;
@@ -210,3 +211,10 @@ input[type=text]:focus, input[type=number]:focus {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
   }
+label, input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+select {
+    margin-right: 10px;
+}
