@@ -11,7 +11,7 @@ require_once "config.php";
 <body>
 <title>Checkout Page</title>
     <link rel="stylesheet" href="cart.css">
-    <?php
+    <!-- <?php
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth = $dbh->prepare("SELECT * FROM purchased"); 
@@ -30,7 +30,11 @@ require_once "config.php";
         }catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
   }
-?>
+?> -->
+<h1>You have purchased your items!</h1>
+<img id = "image" src="download.png" alt="boba"><br>
+<p>Come back again soon</p><br>
+<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>
 </body>
 <script>
     function navigateToHomePage() {
