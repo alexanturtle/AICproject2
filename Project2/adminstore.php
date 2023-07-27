@@ -64,7 +64,8 @@
             <label for="name">New Name: </label>
             <input type="text" name="name" required><br>
             <label for="price">New Price: </label>
-            <input type="number" name="price" min="1" required><br>
+            <input type="number" name="price" min="1" required>
+            <br>
 
             <input class='save' type='submit' value='Save'>
         </form>
@@ -73,10 +74,17 @@
         <!-- adding -->
         <h3>Add an Item</h3>
         <form action='addsaved.php' method='get'>
+            <label for="category">Category: </label>
+            <select name="category" required>
+                <option value="boba">Boba</option>
+                <option value="snack">Snack</option>
+                <option value="smoothie">Smoothie</option>
+            </select><br>
             <label for="name">Name: </label>
             <input type="text" name="name" required><br>
             <label for="price">Price: </label>
-            <input type="number" name="price" min="1" required><br>
+            <input type="number" name="price" min="1" required>
+            <br>
 
             <input class='save' type='submit' value='Add Item'>
         </form>
@@ -93,6 +101,7 @@
             }
             echo "<br>";
             ?>
+            </select><br>
             <input class='save' type='submit' value='Delete'>
         </form>
         
