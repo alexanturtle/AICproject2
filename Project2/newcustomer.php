@@ -5,6 +5,7 @@
       <link rel="stylesheet" href="login.css">
   </head>
   <body>
+    <!-- where a new customer goes to create a new account -->
     <div class="inputbox">
       <h1>Create an Account</h1>
       <form action="acccreated.php" method="post">
