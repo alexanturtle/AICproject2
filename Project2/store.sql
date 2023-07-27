@@ -1,16 +1,14 @@
 CREATE TABLE IF NOT EXISTS `shop` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` text,
-  `shop_type` text,
   PRIMARY KEY (`id`)
 );
 
 INSERT INTO `shop` 
-    (`name`, `shop_type`)
+    (`name`)
 VALUES
-     ('Atdp_merch', 'merch_store'),
-     ('Atdp_books', 'book_store'),
-     ('Atdp_boba', 'boba_store');
+     ('Boba_store');
+  
 
 
 CREATE TABLE IF NOT EXISTS `items` (
