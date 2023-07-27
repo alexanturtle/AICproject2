@@ -25,7 +25,7 @@ require_once "config.php";
             echo "<h1>You have no items in cart to purchase</h1>";
             echo "<img id = 'image' src='sadbob.png' alt='boba'><br>";
             echo "<button type='button' id='items' class='button' onClick='navigateToItemsPage()'>Back to Items</button>"
-            echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>"
+            echo "<button type='button' id='logout' class='button' onClick='navigateToHomePage()'>Logout</button>";
         }
         }catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
