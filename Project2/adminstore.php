@@ -54,7 +54,7 @@
         $sth2->execute();
         $items = $sth2->fetchAll();
 
-        echo "<form action='editsaved.php' method='get'>";
+        echo "<form action='editsaved.php' method='post'>";
             $num = 0;
             echo "<table id='adminedittable'>";
             echo "<th>Item Number</th>";
@@ -65,7 +65,7 @@
             echo "<td>". $item['id'] . "</td>";
             //echo "<td><input type='text' id='" . $item['id'] . "' name='test' value='" . $item['id'] ."'></td>";
             echo "<td><input type='text' id='" . $item['id'] . "." . $item['item_name'] . "' name='" . $item['id'] . "." . $item['item_name'] . "' value='" .  $item['item_name'] ."'></td>";
-            echo "<td><input type='text' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
+            echo "<td><input type='number' id='" . $item['id'] . "." . $item['price'] . "' name=''". $item['id'] . "." . $item['price'] . "' value='" .  $item['price'] ."'></td>";
             //   echo "<td>".$item['item_name']."</td>";
             //   echo "<td>"."$".$item['price'].""."</td>";
             //   echo "<td><button type='button'><img src='edit-icon.png' alt='edit-button' class='adminbutton' onClick='edit()'/></button></td>";

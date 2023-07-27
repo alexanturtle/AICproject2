@@ -1,3 +1,5 @@
+/* css sheet for itemsinstore.php & adminstore.php (or any adjacent pages) */
+/* itemsinstore */
 body {
     background-color: #f6e7e4;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -116,6 +118,7 @@ h1 {
     display: none;
 }
 
+/* adminstore */
 td{
     text-align: left;
 }
@@ -182,6 +185,12 @@ table{
     margin-right: auto;
     margin-top: 10px;
 }
-input[type=text] {
+input[type=text],input[type=number] {
     text-align: center;
+    border: none;
+    background-color: #f6e7e4;;
+}
+input[type=text]:focus, input[type=number]:focus {
+    text-align: center;
+    background: #E2BCB7;
 }

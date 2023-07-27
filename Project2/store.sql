@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `items` (
 INSERT INTO `items` 
     (`shop_id`, `price`, `category`, `item_name`, `item_image`)
 VALUES
- (1, 6, 'boba', 'Rose Milk Tea', 'rose.jpg'),
+  (1, 6, 'boba', 'Rose Milk Tea', 'rose.jpg'),
   (1, 6, 'boba', 'Earl Grey Milk Tea', 'earl.jpg'),
   (1, 6, 'boba', 'Caramel Milk Tea', 'caramel.jpg'),
   (1, 7, 'boba', 'Strawberry Milk Tea', 'strawberry.jpg'),
