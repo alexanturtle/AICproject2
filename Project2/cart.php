@@ -12,8 +12,15 @@ require_once "config.php";
     <h1>Cart</h1>
      <?php
     try {
-        $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-                $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id"); 
+            if(isset($_SESSION['customer'])){
+              $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+              $user = $dbh->prepare("SELECT `id` FROM customer WHERE `user_name` = :user"); 
+                $user->bindValue(':user', $_SESSION['customer']);
+                $user->execute();
+                $id= $user->fetch();
+
+                $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id WHERE `customer_id` = :id AND `bought` = 'False'"); 
+                $sth->bindValue(':id', $id['id']);
                 $sth->execute();
                 $items= $sth->fetchAll();
                 echo "<table>";
@@ -36,6 +43,10 @@ require_once "config.php";
               echo "</tr>";
             }
             echo "</table>";
+          }
+          else{
+              header("Location: homepage.php");
+          }
         }  
     catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
