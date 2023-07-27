@@ -42,13 +42,13 @@ session_start();
             header("Location: itemsinstore.php"); //takes user back to iteminstore immediately
             }
             else{
-                header("Location: itemsinstore.php");
+                header("Location: itemsinstore.php"); 
             }
 
             
         }
         else {
-            header("Location: customerlogin.php");
+            header("Location: customerlogin.php"); //if the customer is not signed in, then it takes the customer to the signin page
         }
         // }
     }

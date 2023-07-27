@@ -1,4 +1,5 @@
 <?php
+// here is the logout function to end a session
 // Initialize the session.
 // If you are using session_name("something"), don't forget it now!
 session_start();

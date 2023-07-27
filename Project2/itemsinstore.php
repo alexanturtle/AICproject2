@@ -12,19 +12,14 @@ require_once "config.php";
     <!-- this is where customers see all of the items in the store and can order them -->
 <?php
     try {
-    // $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    // $sth0 = $dbh->prepare("SELECT real_pass FROM customer WHERE :username = user_name");
-    // $sth0->bindValue(':username', $_POST['username']);
-    // $sth0->execute();
-    // $realpass = $sth0->fetch();
-    // password_hash($realpass['real_pass'], PASSWORD_DEFAULT);
-
+        // we check to see if username and passwod is inputed
     if (isset($_POST['password']) && isset($_POST['username'])) {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth1 = $dbh->prepare("SELECT password FROM customer WHERE :username = user_name");
         $sth1->bindValue(':username', $_POST['username']);
         $sth1->execute();
         $hash = $sth1->fetch();
+        // we make sure that the password exists, if not then we take the customer back to login
         if(isset($hash["password"])){
             $passwordhash = $hash["password"];
         }
@@ -47,6 +42,8 @@ require_once "config.php";
         //     // header("Location: customerlogin.php");
         // }
 ?>
+<!-- here we create the page with all of the shop item for customers to buy -->
+<!-- here is the toppings page which pops up when you order something, it gives the options of 3 toppins as well as for the user to add the item to their cart -->
 <div id="toppingpage" class="hide">
         <h1 id="itemname">Item Name</h1>
         <div id="toppingbody">
@@ -70,6 +67,7 @@ require_once "config.php";
         </div>
     </div>
 <?php
+// here we take all of the items in the store
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $getitem = $dbh->prepare("SELECT * FROM items");
     $getitem->execute();
@@ -142,7 +140,7 @@ require_once "config.php";
     }
     </script>
 <?php
-        }
+        } //we make sure that the password is correct, if not we take the customer back
         else {
         // echo "session not set";
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {

@@ -14,6 +14,7 @@
      ?>
      <div class="inputbox">
       <h1>Customer Login</h1>
+      <!-- here is the form for customers to put their username and password -->
       <form  id="myForm" action="itemsinstore.php" method="post">
               <label for="username">Username: </label> <br>
               <input type="text" id="username" placeholder="Enter Username" name="username" required>
@@ -28,12 +29,6 @@
            
       </form>
      </div>
-     <!-- <script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-      event.preventDefault(); 
-      window.location.href = "itemsinstore.php";
-    });
-  </script> -->
   </body>
   </html>
   

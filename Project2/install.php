@@ -3,6 +3,7 @@
     <title>Install Store DB</title>
 </head>
 <body>
+    <!-- here is where we install our SQL tables -->
 <?php
 require_once "config.php";
 try {

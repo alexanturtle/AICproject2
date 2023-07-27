@@ -13,8 +13,14 @@ session_start();
     <?php
     try {
         //var_dump($_POST);
+        // here we check if the username and password values exist
         if(isset($_POST['username']) && isset($_POST['password'])){
-          $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+          // here we create copies of the username and password without spaces 
+          $userstring = str_replace(' ', '', $_POST['username']);
+          $passwordstring = str_replace(' ', '', $_POST['password']);
+          // here we check to make sure the username and password actually contain stuff
+          if(strlen($userstring) > 0 && strlen($passwordstring) > 0){
+            $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
           $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
           $get = $dbh->prepare("SELECT user_name FROM customer"); 
           $get->execute();
@@ -38,8 +44,14 @@ session_start();
             echo "<img id = 'image' src='bob.png' alt='boba'><br>";
             echo "<a class='logoutbutton' href='customerlogin.php'>Log In</a>";
           }
-          else{
+          else{ 
             echo "<p>This username already exists ya dumbo</p><br>"; //this is if the user already exists
+            echo "<img id = 'image' src='damn.gif' alt='boba'><br>";
+            echo "<a class='logoutbutton' href='newcustomer.php'>Back</a>";
+          }
+          }
+          else{
+            echo "<p>You can't put nothing as a username/password ya dumbo</p><br>"; //this is if the given username or password has nothing
             echo "<img id = 'image' src='damn.gif' alt='boba'><br>";
             echo "<a class='logoutbutton' href='newcustomer.php'>Back</a>";
           }

@@ -14,11 +14,13 @@ require_once "config.php";
      <?php
     try {
             if(isset($_SESSION['customer'])){
+              // here we select the id of the customer
               $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
               $user = $dbh->prepare("SELECT `id` FROM customer WHERE `user_name` = :user"); 
                 $user->bindValue(':user', $_SESSION['customer']);
                 $user->execute();
                 $id= $user->fetch();
+                // we make sure that the id exists before selecting all the user's items that are in the cart and not bought yet
                 if(isset($id['id'])){
                   $sth = $dbh->prepare("SELECT items.item_name, items.price, `topping` FROM items INNER JOIN purchased ON items.id=purchased.item_id WHERE `customer_id` = :id AND `bought` = 'False'"); 
                 $sth->bindValue(':id', $id['id']);
@@ -26,6 +28,7 @@ require_once "config.php";
                 $items= $sth->fetchAll();
                 }
                 //var_dump($items);
+                // here we create a table with all of the user's cart items
                 echo "<table>";
                 if(isset($items)){
                   echo "<th>Item</th>";
@@ -35,6 +38,7 @@ require_once "config.php";
                   echo "<tr>";
             //  echo "<p>"" ".$item['price']."</p>";
               echo "<td>".$item['item_name']."</td>";
+              // here we check to see with topping they chose and then display it
               if($item['topping'] == 1){
                 echo "<td>Tapioca Pearls</td>";
               }
@@ -61,6 +65,7 @@ require_once "config.php";
       echo "<p>Error: {$e->getMessage()}</p>";
     }
 ?>
+<!-- here are some buttons they can click to go back, buy the cart items, or logout -->
    <form action="checkout.php" method="post">
        <div id="cart">
             <br><br>

@@ -8,6 +8,7 @@
     <!-- this is where admins login -->
     <div class="inputbox">
       <h1>Admin Login</h1>
+      <!-- here is the form for admins to enter their username and password -->
       <form action="adminstore.php" method="post">
               <label for="username">Username: </label> <br>
               <input type="text" id="username" placeholder="Enter Username" name="username" required>

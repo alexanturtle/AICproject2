@@ -4,7 +4,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FDFDF6;
 }
-
+/* css for the table info where items are displayed */
 td{
     text-align: center;
     font-size: 25px;
@@ -33,6 +33,7 @@ table{
      display: block;
      border-collapse: collapse;
  }
+ /* css for all buttons displayed */
  .button {
     background-color: #DBE9B7;
     border-radius: 10px;
@@ -49,12 +50,13 @@ table{
     margin-right: auto;
     display: block;
   }
-
+/* css for the text */
   p{
     text-align: center;
     font-size: 30px;
     color: #35251A;
   }
+  /* css for all images */
   img{
     align-items: center;
     width: 25%;
@@ -66,9 +68,11 @@ table{
     margin-right: auto;
      display: block;
   }
+  /* css for links */
   a{
     text-align: center;
   }
+  /* specific css for the logout button */
   .logoutbutton {
     display: block;
     margin-left: 47%;

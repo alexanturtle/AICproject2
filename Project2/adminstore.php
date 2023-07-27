@@ -16,6 +16,7 @@
       try {
 
         if (isset($_POST['password']) && isset($_POST['username'])) {
+            // here we make sure that the username is correct and we get the password
             $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             $sth1 = $dbh->prepare("SELECT password FROM admin WHERE :username = user_name");
             $sth1->bindValue(':username', $_POST['username']);
@@ -25,19 +26,19 @@
                 $passwordhash = $hash["password"];
             }
             else if(!isset($_SESSION['admin'])){
-                header("Location: adminlogin.php");
+                header("Location: adminlogin.php"); //if not correct then we take the admin back
             }
             $password = $_POST['password'];
         }
         else if(!isset($_SESSION['admin'])){
-          header("Location: adminlogin.php");
+          header("Location: adminlogin.php"); //if the admin is not in session then we also take the admin back to the login page
         }
         if (isset($_SESSION['admin'])) {
     ?>
 
     <div id="body">
     <?php
-
+// here we selecta all of the items from the store
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
         $sth2 = $dbh->prepare("SELECT * FROM items");
         $sth2->execute();
@@ -55,6 +56,7 @@
             <label for="editid">Choose an item number to edit: </label>
             <select name="editid" required>
             <?php
+            // here is a list of all the items 
             foreach ($items as $item) {
                 echo "<option value=".$item['id'].">".$item['id']."</option>";
             }
@@ -71,7 +73,7 @@
         </form>
         <br>
         
-        <!-- adding -->
+        <!-- adding an item to the store-->
         <h3>Add an Item</h3>
         <form action='addsaved.php' method='get'>
             <label for="category">Category: </label>
@@ -90,7 +92,7 @@
         </form>
         <br>
 
-        <!-- deleting -->
+        <!-- deleting an item in the store-->
         <h3>Delete an Item</h3>
         <form action='deletesaved.php' method='get'>
             <label for="deleteid">Choose an item number to delete: </label>
@@ -127,12 +129,13 @@
     <?php
         }
         else {
+            // here we make sure that the password is correct before letting the admin in
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password']) && isset($_POST['username']) && password_verify($password, $passwordhash)) {
             $_SESSION['admin'] = $_POST['username'];
             header("Location: adminstore.php");
         }
         else {
-            header("Location: adminlogin.php");
+            header("Location: adminlogin.php"); //if its not correct, then we take the user back to the login page
         }
         }
     }
@@ -140,6 +143,7 @@
         echo "<p>Error connecting to database!</p>";
     }
     ?>
-<a id="logoutbutton" href="logout.php">Logout</a>
+    <!-- here is the logout button to end the session -->
+<a id="logoutbutton" href="logout.php">Logout</a> 
 </body>
 </html>
