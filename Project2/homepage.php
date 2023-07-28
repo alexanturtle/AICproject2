@@ -31,5 +31,6 @@
             header("Location: admin.php");
           }
      ?>
+     <a href="references.php">References</a>
     </body>
 </html>
